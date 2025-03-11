@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Art of Problem Solving</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai.min.css">
+  
+  <style>
+    :root {
+      --primary: #FF4081; /* Hot pink - vibrant and bold */
+      --secondary: #00E5FF; /* Bright cyan */
+      --accent: #FFEA00; /* Bright yellow */
+      --dark: #212121;
+      --light: #FAFAFA;
+    }
+    
+    .meme-image {
+      max-width: 90%;
+      max-height: 300px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .reveal {
+      font-family: 'Segoe UI', Helvetica, sans-serif;
+    }
+    
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-weight: 700;
+      text-transform: none;
+      margin-bottom: 0.8em;
+    }
+    
+    .reveal h1 {
+      font-size: 2.5em;
+      color: var(--primary);
+    }
+    
+    .reveal h2 {
+      font-size: 1.8em;
+      color: var(--secondary);
+    }
+    
+    .reveal h3 {
+      font-size: 1.4em;
+      color: var(--accent);
+    }
+    
+    .reveal p, .reveal li {
+      font-size: 1.2em;
+    }
+    
+    .reveal ul {
+      list-style-type: none;
+      margin: 0 0 30px 15px;
+    }
+    
+    .reveal ul li {
+      margin-bottom: 0.5em;
+      padding-left: 1em;
+      position: relative;
+    }
+    
+    .reveal ul li:before {
+      content: '✓';
+      color: var(--accent);
+      position: absolute;
+      left: -0.5em;
+    }
+    
+    .reveal .step {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5em;
+    }
+    
+    .reveal .step-number {
+      background: var(--primary);
+      color: var(--light);
+      width: 1.8em;
+      height: 1.8em;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 0.8em;
+      flex-shrink: 0;
+    }
+    
+    .reveal .step-content {
+      flex-grow: 1;
+      font-size: 1.3em;
+    }
+    
+    .reveal blockquote {
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 4px solid var(--primary);
+      padding: 0.5em 1em;
+      font-style: italic;
+    }
+    
+    .reveal .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+    }
+    
+    .reveal .fragment.highlight-current-red.visible {
+      color: var(--primary);
+    }
+    
+    .reveal .fragment.highlight-current-blue.visible {
+      color: var(--secondary);
+    }
+    
+    .reveal section img {
+      border: none;
+      box-shadow: none;
+      max-height: 400px;
+    }
+    
+    .reveal .comparison {
+      display: flex;
+      justify-content: space-around;
+    }
+    
+    .reveal .comparison > div {
+      text-align: center;
+      padding: 1em;
+      border-radius: 8px;
+    }
+    
+    .reveal .comparison .before {
+      background: rgba(255, 0, 0, 0.2);
+      margin-right: 0.5em;
+    }
+    
+    .reveal .comparison .after {
+      background: rgba(0, 255, 0, 0.2);
+      margin-left: 0.5em;
+    }
+    
+    .reveal .joke {
+      font-style: italic;
+      color: var(--accent);
+      font-size: 0.8em;
+      text-align: right;
+      margin-top: 2em;
+    }
+    
+    /* Background styles */
+    .reveal .slide-background.title-slide {
+      background: linear-gradient(135deg, #1a237e, #4a148c);
+    }
+    
+    .reveal .slide-background.about-me {
+      background: linear-gradient(135deg, #311b92, #6a1b9a);
+    }
+    
+    .reveal .slide-background.problem {
+      background: linear-gradient(135deg, #b71c1c, #880e4f);
+    }
+    
+    .reveal .slide-background.better-way {
+      background: linear-gradient(135deg, #01579b, #0277bd);
+    }
+    
+    .reveal .slide-background.visualize {
+      background: linear-gradient(135deg, #004d40, #006064);
+    }
+    
+    .reveal .slide-background.backwards {
+      background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    }
+    
+    .reveal .slide-background.break-down {
+      background: linear-gradient(135deg, #e65100, #f57f17);
+    }
+    
+    .reveal .slide-background.putting-together {
+      background: linear-gradient(135deg, #4a148c, #6a1b9a);
+    }
+    
+    .reveal .slide-background.benefits {
+      background: linear-gradient(135deg, #0d47a1, #1565c0);
+    }
+    
+    .reveal .slide-background.start-small {
+      background: linear-gradient(135deg, #bf360c, #d84315);
+    }
+    
+    .reveal .slide-background.thank-you {
+      background: linear-gradient(135deg, #263238, #37474f);
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Title Slide -->
+      <section data-background-class="title-slide">
+        <h1>The Art of Problem Solving</h1>
+        <h3>Breaking Down Complex Challenges</h3>
+        <p>PHP Melb Meetup</p>
+        <div class="joke">I promise this won't be as painful as debugging CSS</div>
+      </section>
+
+      <!-- About Me -->
+      <section data-background-class="about-me">
+        <h2>About Me</h2>
+        <ul>
+          <li class="fragment">Senior Software Engineer at Five9</li>
+          <li class="fragment">Previously led warehouse dispatch systems at Aussie Broadband's Fulfil team</li>
+          <li class="fragment">Experience in telecom provisioning, mobile apps, and enterprise solutions</li>
+          <li class="fragment">I turn coffee into solutions (and occasionally problems)</li>
+        </ul>
+        <div class="joke">I've created enough bugs to know how to solve them</div>
+      </section>
+
+      <!-- The Problem with Problems -->
+      <section data-background-class="problem">
+        <h2>The Problem with Problems</h2>
+        <p>Why do we struggle with complex challenges?</p>
+        
+        <img src="/api/placeholder/600/400" alt="Dog at computer with room on fire meme" class="meme-image fragment" />
+        <p class="fragment">This is fine. I'm just fixing "one small bug" for 8 hours.</p>
+        
+        <div class="comparison fragment">
+          <div class="before">
+            <h3>Common Approaches</h3>
+            <ul>
+              <li>Solution-first thinking</li>
+              <li>Monolithic approaches</li>
+              <li>Technology-driven decisions</li>
+            </ul>
+          </div>
+          <div class="after">
+            <h3>Resulting Issues</h3>
+            <ul>
+              <li>Wrong solutions</li>
+              <li>Overwhelm & paralysis</li>
+              <li>Square pegs, round holes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- A Better Way -->
+      <section data-background-class="better-way">
+        <h2>A Better Way</h2>
+        
+        <div class="step fragment">
+          <div class="step-number">1</div>
+          <div class="step-content"><strong>Visualize the end goal</strong> ✓</div>
+        </div>
+        
+        <div class="step fragment">
+          <div class="step-number">2</div>
+          <div class="step-content"><strong>Work backwards</strong> ←</div>
+        </div>
+        
+        <div class="step fragment">
+          <div class="step-number">3</div>
+          <div class="step-content"><strong>Break it down</strong> ⊟</div>
+        </div>
+        
+        <img src="/api/placeholder/600/350" alt="Drake meme with rejecting complex solutions and approving simple breakdown" class="meme-image fragment" />
+        
+        <p class="fragment">I'll walk you through how we applied this to a real warehouse dispatch system</p>
+        
+        <div class="joke">No, this isn't how to make a sandwich, though that would be a more delicious presentation</div>
+      </section>
+
+      <!-- Step 1 - Visualize the End Goal -->
+      <section data-background-class="visualize">
+        <h2>Step 1 - Visualize the End Goal</h2>
+        <p>Start with the destination in mind</p>
+        
+        <div class="grid">
+          <div>
+            <ul>
+              <li class="fragment highlight-current-blue">What does success actually look like?</li>
+              <li class="fragment highlight-current-blue">What problem are we really solving?</li>
+              <li class="fragment highlight-current-blue">Who benefits and how?</li>
+            </ul>
+            
+            <p class="fragment">For our dispatch system:</p>
+            <ul class="fragment">
+              <li>Efficient warehouse operations</li>
+              <li>Real-time tracking of jobs</li>
+              <li>Automated carrier integration</li>
+            </ul>
+          </div>
+          <div>
+            <img src="/api/placeholder/400/300" alt="IKEA instruction confusion meme" class="meme-image fragment" />
+          </div>
+        </div>
+        
+        <blockquote class="fragment">
+          "If you don't know where you're going, any road will get you there."
+        </blockquote>
+        
+        <div class="joke">Starting without a clear vision is like building IKEA furniture without the final picture</div>
+      </section>
+
+      <!-- Real Example - Visualizing -->
+      <section data-background-class="visualize">
+        <h2>Real Example - Visualizing the Goal</h2>
+        <h3>Telecom Provisioning System</h3>
+        
+        <div class="grid">
+          <div>
+            <h3>Vision:</h3>
+            <ul>
+              <li>Process 1000+ daily orders</li>
+              <li>Sub-15 minute provisioning</li>
+              <li>Seamless customer experience</li>
+            </ul>
+          </div>
+          <div>
+            <h3>What we avoided:</h3>
+            <ul>
+              <li>Just "fixing the backlog"</li>
+              <li>Isolated improvements</li>
+              <li>Tech-driven approach</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="joke">Our first attempt looked more like a Rube Goldberg machine</div>
+      </section>
+
+      <!-- Step 2 - Work Backwards -->
+      <section data-background-class="backwards">
+        <h2>Step 2 - Work Backwards</h2>
+        <p>Find your starting point</p>
+        
+        <img src="/api/placeholder/600/300" alt="GPS recalculating route meme" class="meme-image fragment" />
+        
+        <ul>
+          <li class="fragment highlight-current-red">Identify critical requirements</li>
+          <li class="fragment highlight-current-red">Map dependencies</li>
+          <li class="fragment highlight-current-red">Find the shortest path from end to start</li>
+        </ul>
+        
+        <blockquote class="fragment">
+          "Begin with the end in mind, then figure out how to get there."
+        </blockquote>
+        
+        <div class="joke">GPS manufacturers missed their chance with the "figure out where you're going first" button</div>
+      </section>
+
+      <!-- Real Example - Working Backwards -->
+      <section data-background-class="backwards">
+        <h2>Real Example - Working Backwards</h2>
+        <h3>Dispatch System Dependencies</h3>
+        
+        <div class="grid">
+          <div>
+            <h3>Critical Path:</h3>
+            <ul>
+              <li>Job creation/validation</li>
+              <li>Warehouse & device assignment</li>
+              <li>Shipping label generation</li>
+              <li>Carrier integration</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dependencies:</h3>
+            <ul>
+              <li>Shipping Carrier Interface</li>
+              <li>Inventory Service</li>
+              <li>Printing Service</li>
+              <li>Webhook notifications</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p class="fragment">Key insight: We needed a <strong>strategy pattern</strong> for shipping carriers</p>
+        <p class="fragment">Created <code>ShippingCarrierManager</code> to abstract AusPost vs StarTrack implementations</p>
+        
+        <blockquote>
+          "By starting with the end-to-end dispatch process and working backwards, we identified the key integration points we needed to solve first."
+        </blockquote>
+      </section>
+
+      <!-- Step 3 - Break It Down -->
+      <section data-background-class="break-down">
+        <h2>Step 3 - Break It Down</h2>
+        <p>Create achievable components</p>
+        
+        <div class="grid">
+          <div>
+            <ul>
+              <li class="fragment highlight-current-blue">Divide by function</li>
+              <li class="fragment highlight-current-blue">Create logical groupings</li>
+              <li class="fragment highlight-current-blue">Keep components manageable (1-2 day tasks)</li>
+            </ul>
+            
+            <blockquote class="fragment">
+              "The best way to eat an elephant is one bite at a time."
+            </blockquote>
+          </div>
+          <div>
+            <img src="/api/placeholder/400/300" alt="How to draw an owl meme - two circles then complete owl" class="meme-image fragment" />
+          </div>
+        </div>
+        
+        <div class="joke">This is basically how I approach eating a burrito bowl too</div>
+      </section>
+
+      <!-- Real Example - Breaking It Down -->
+      <section data-background-class="break-down">
+        <h2>Real Example - Breaking It Down</h2>
+        <h3>Dispatch System Components</h3>
+        
+        <div class="grid">
+          <div>
+            <ul>
+              <li>Core job management</li>
+              <li>Hardware & device management</li>
+              <li>Carrier integration system</li>
+              <li>Boxing & label generation</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>User authentication</li>
+              <li>Warehouse allocation</li>
+              <li>Item scanning/validation</li>
+              <li>Event handling with observers</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="fragment">
+          <p>Each component was further broken down:</p>
+          <ul>
+            <li>Controller layer for web requests</li>
+            <li>Service layer for business logic</li>
+            <li>Model layer for data structure</li>
+            <li>Interface-based design for shipping carriers</li>
+          </ul>
+        </div>
+        
+        <div class="joke">Once we had the pieces, it's still a puzzle - but one you can actually solve</div>
+      </section>
+
+      <!-- Putting It All Together -->
+      <section data-background-class="putting-together">
+        <h2>Putting It All Together</h2>
+        
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content"><strong>Clear vision: End-to-end warehouse dispatch system</strong></div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content"><strong>Work backwards: Identify critical services & interfaces</strong></div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content"><strong>Break it down: SOLID services with clear responsibilities</strong></div>
+        </div>
+        
+        <img src="/api/placeholder/500/300" alt="Galaxy brain meme with increasingly complex problem solving" class="meme-image fragment" />
+        
+        <div class="fragment">
+          <p>Architecture highlights:</p>
+          <ul>
+            <li>Interface-based <code>ShippingCarrier</code> with concrete implementations</li>
+            <li>Dedicated <code>PrintingService</code> and <code>InventoryService</code></li>
+            <li>Observer pattern with <code>DispatchJobObserver</code> for webhook events</li>
+            <li>Strategy pattern in <code>ShippingCarrierManager</code></li>
+          </ul>
+        </div>
+        
+        <div class="joke">Yes, I know this looks suspiciously like "draw the rest of the owl" but I promise it works</div>
+      </section>
+
+      <!-- Why This Works -->
+      <section data-background-class="benefits">
+        <h2>Why This Works</h2>
+        
+        <div class="grid">
+          <div>
+            <h3>Team Benefits:</h3>
+            <ul>
+              <li>Clearer communication</li>
+              <li>More accurate estimates</li>
+              <li>Easier delegation</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Technical Benefits:</h3>
+            <ul>
+              <li>Faster identification of roadblocks</li>
+              <li>Higher quality solutions</li>
+              <li>More maintainable code</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="fragment">
+          <p>For our dispatch system, specific benefits included:</p>
+          <ul>
+            <li>Service classes with single responsibilities</li>
+            <li>Polymorphic shipping carrier implementations</li>
+            <li>Clear interfaces between components</li>
+            <li>Easier testing with well-defined boundaries</li>
+          </ul>
+        </div>
+        
+        <blockquote class="fragment">
+          "Our dispatch system achieved clean separation of concerns with services that follow SOLID principles."
+        </blockquote>
+      </section>
+
+      <!-- Start Small -->
+      <section data-background-class="start-small">
+        <h2>Start Small</h2>
+        <p>Try this approach on your next PHP challenge:</p>
+        
+        <div class="grid">
+          <div>
+            <div class="step fragment">
+              <div class="step-number">1</div>
+              <div class="step-content">Take 15 minutes to write out what success looks like</div>
+            </div>
+            
+            <div class="step fragment">
+              <div class="step-number">2</div>
+              <div class="step-content">Identify your 3 most critical integrations/dependencies</div>
+            </div>
+            
+            <div class="step fragment">
+              <div class="step-number">3</div>
+              <div class="step-content">Break the problem into logical controllers, models and services</div>
+            </div>
+          </div>
+          <div>
+            <img src="/api/placeholder/400/300" alt="It's Not Much But It's Honest Work meme" class="meme-image fragment" />
+          </div>
+        </div>
+        
+        <p class="fragment">In our dispatch system, this approach gave us:</p>
+        <ul class="fragment">
+          <li>Specialized controllers for each aspect (Jobs, Devices, BoxSizes, etc.)</li>
+          <li>Clean model relationships with clear responsibilities</li>
+          <li>Modular services that could be independently tested</li>
+        </ul>
+        
+        <div class="joke">If you try this approach and it doesn't work, you still have my permission to blame your product manager</div>
+      </section>
+
+      <!-- Thank You & Questions -->
+      <section data-background-class="thank-you">
+        <h2>Thank You!</h2>
+        
+        <p>Questions?</p>
+        
+        <img src="/api/placeholder/500/350" alt="Batman slapping Robin meme about fixing bugs in production" class="meme-image fragment" />
+        
+        <div class="joke">Questions are like bugs - better to find them now than later in production</div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide',
+      backgroundTransition: 'fade'
+      // Removed plugins reference since we're not using code highlighting in this presentation
+    });
+  </script>
+</body>
+</html>
