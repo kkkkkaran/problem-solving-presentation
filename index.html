@@ -39,22 +39,22 @@
     }
     
     .reveal h1 {
-      font-size: 2.5em;
+      font-size: 2em;
       color: var(--primary);
     }
     
     .reveal h2 {
-      font-size: 1.8em;
+      font-size: 1.6em;
       color: var(--secondary);
     }
     
     .reveal h3 {
-      font-size: 1.4em;
+      font-size: 1.2em;
       color: var(--accent);
     }
     
     .reveal p, .reveal li {
-      font-size: 1.2em;
+      font-size: 1em;
     }
     
     .reveal ul {
@@ -97,7 +97,7 @@
     
     .reveal .step-content {
       flex-grow: 1;
-      font-size: 1.3em;
+      font-size: 1.1em;
     }
     
     .reveal blockquote {
@@ -152,7 +152,7 @@
       font-style: italic;
       color: var(--accent);
       font-size: 0.8em;
-      text-align: right;
+      text-align: center;
       margin-top: 2em;
     }
     
@@ -200,6 +200,103 @@
     .reveal .slide-background.thank-you {
       background: linear-gradient(135deg, #263238, #37474f);
     }
+    
+    /* Add these styles to fix the vertical overflow */
+    .reveal .slides {
+      height: 90vh !important; /* Adjust percentage as needed */
+    }
+
+    .reveal .slides section {
+      max-height: 90vh !important;
+      overflow: auto !important;
+      scrollbar-width: thin; /* For Firefox */
+      -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    }
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .reveal .slides section::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Only show scrollbars when actually scrolling */
+    .reveal .slides section {
+      overflow-y: auto !important;
+    }
+    
+    /* Additional spacing adjustments for problem slide */
+    .reveal .problem-slide h2 {
+      margin-bottom: 10px !important;
+    }
+    
+    .reveal .problem-slide p {
+      margin: 5px 0 !important;
+    }
+    
+    .reveal .problem-slide .meme-image {
+      max-height: 180px !important;
+      margin: 5px auto !important;
+    }
+    
+    .reveal .problem-slide .comparison {
+      margin-top: 5px !important;
+    }
+    
+    .reveal .problem-slide h3 {
+      margin: 5px 0 !important;
+      font-size: 1em !important;
+    }
+    
+    .reveal .problem-slide ul {
+      margin: 0 0 5px 15px !important;
+    }
+    
+    .reveal .problem-slide li {
+      margin-bottom: 2px !important;
+    }
+    
+    /* Reduce font sizes for better fit */
+    .reveal h1 {
+      font-size: 2em; /* Reduced from 2.5em */
+    }
+    
+    .reveal h2 {
+      font-size: 1.6em; /* Reduced from 1.8em */
+    }
+    
+    .reveal h3 {
+      font-size: 1.2em; /* Reduced from 1.4em */
+    }
+    
+    .reveal p, .reveal li {
+      font-size: 1em; /* Reduced from 1.2em */
+    }
+    
+    .reveal .step-content {
+      font-size: 1.1em; /* Reduced from 1.3em */
+    }
+    
+    /* Make images more responsive */
+    .meme-image {
+      max-height: 250px !important; /* Reduced from 300px */
+    }
+    
+    /* Add responsive scaling for different screen sizes */
+    @media (max-width: 1200px) {
+      .reveal h1 { font-size: 1.8em; }
+      .reveal h2 { font-size: 1.4em; }
+      .reveal h3 { font-size: 1.1em; }
+      .reveal p, .reveal li { font-size: 0.9em; }
+      .meme-image { max-height: 220px !important; }
+    }
+    
+    @media (max-width: 800px) {
+      .reveal h1 { font-size: 1.6em; }
+      .reveal h2 { font-size: 1.2em; }
+      .reveal h3 { font-size: 1em; }
+      .reveal p, .reveal li { font-size: 0.8em; }
+      .reveal .step-content { font-size: 0.9em; }
+      .meme-image { max-height: 180px !important; }
+    }
   </style>
 </head>
 <body>
@@ -217,20 +314,21 @@
       <section data-background-class="about-me">
         <h2>About Me</h2>
         <ul>
-          <li class="fragment">Senior Software Engineer at Five9</li>
-          <li class="fragment">Previously led warehouse dispatch systems at Aussie Broadband's Fulfil team</li>
-          <li class="fragment">Experience in telecom provisioning, mobile apps, and enterprise solutions</li>
-          <li class="fragment">I turn coffee into solutions (and occasionally problems)</li>
+          <li class="fragment">Señor Software Engineer at Five9</li>
+          <li class="fragment">Ex Mr.Fixit at Aussie Broadband</li>
+          <li class="fragment">10+ years of cursing at terrible code, only to find my name in the git blame</li>
+          <li class="fragment">Casual sim racer who applies racing lines to grocery store aisles</li>
+          <li class="fragment">Professional caffeine-to-code converter with occasional side effects</li>
         </ul>
         <div class="joke">I've created enough bugs to know how to solve them</div>
       </section>
 
       <!-- The Problem with Problems -->
-      <section data-background-class="problem">
+      <section data-background-class="problem" class="problem-slide">
         <h2>The Problem with Problems</h2>
         <p>Why do we struggle with complex challenges?</p>
         
-        <img src="/api/placeholder/600/400" alt="Dog at computer with room on fire meme" class="meme-image fragment" />
+        <img src="images/this-is-fine-dog.jpeg" alt="Dog at computer with room on fire meme" class="meme-image fragment" />
         <p class="fragment">This is fine. I'm just fixing "one small bug" for 8 hours.</p>
         
         <div class="comparison fragment">
@@ -272,7 +370,7 @@
           <div class="step-content"><strong>Break it down</strong> ⊟</div>
         </div>
         
-        <img src="/api/placeholder/600/350" alt="Drake meme with rejecting complex solutions and approving simple breakdown" class="meme-image fragment" />
+        <img src="images/drake-meme.jpeg" alt="Drake meme with rejecting complex solutions and approving simple breakdown" class="meme-image fragment" />
         
         <p class="fragment">I'll walk you through how we applied this to a real warehouse dispatch system</p>
         
@@ -300,7 +398,7 @@
             </ul>
           </div>
           <div>
-            <img src="/api/placeholder/400/300" alt="IKEA instruction confusion meme" class="meme-image fragment" />
+            <img src="images/ikea-instructions.jpeg" alt="IKEA instruction confusion meme" class="meme-image fragment" />
           </div>
         </div>
         
@@ -314,26 +412,32 @@
       <!-- Real Example - Visualizing -->
       <section data-background-class="visualize">
         <h2>Real Example - Visualizing the Goal</h2>
-        <h3>Telecom Provisioning System</h3>
+        <h3>Warehouse Dispatch System at Aussie Broadband</h3>
         
         <div class="grid">
           <div>
-            <h3>Vision:</h3>
+            <h3>Legacy System Problems:</h3>
             <ul>
-              <li>Process 1000+ daily orders</li>
-              <li>Sub-15 minute provisioning</li>
-              <li>Seamless customer experience</li>
+              <li>5000+ line monolithic files</li>
+              <li>Originally for 1 SKU, hacked to handle 50+</li>
+              <li>Tightly coupled to legacy WideCMS</li>
+              <li>Incompatible with PHP 8 upgrade</li>
             </ul>
           </div>
           <div>
-            <h3>What we avoided:</h3>
+            <h3>Vision:</h3>
             <ul>
-              <li>Just "fixing the backlog"</li>
-              <li>Isolated improvements</li>
-              <li>Tech-driven approach</li>
+              <li>Microservice architecture</li>
+              <li>PHP 8.3 & Laravel 12</li>
+              <li>Detached Vue.js frontend</li>
+              <li>Headless capability</li>
             </ul>
           </div>
         </div>
+        
+        <blockquote class="fragment">
+          "Instead of just 'making it work with PHP 8', we recognized an opportunity to solve deeper architectural problems."
+        </blockquote>
         
         <div class="joke">Our first attempt looked more like a Rube Goldberg machine</div>
       </section>
@@ -343,7 +447,7 @@
         <h2>Step 2 - Work Backwards</h2>
         <p>Find your starting point</p>
         
-        <img src="/api/placeholder/600/300" alt="GPS recalculating route meme" class="meme-image fragment" />
+        <img src="images/gps-recalculating.jpeg" alt="GPS recalculating route meme" class="meme-image fragment" />
         
         <ul>
           <li class="fragment highlight-current-red">Identify critical requirements</li>
@@ -410,11 +514,120 @@
             </blockquote>
           </div>
           <div>
-            <img src="/api/placeholder/400/300" alt="How to draw an owl meme - two circles then complete owl" class="meme-image fragment" />
+            <img src="images/how-to-draw-owl.jpeg" alt="How to draw an owl meme - two circles then complete owl" class="meme-image fragment" />
           </div>
         </div>
         
         <div class="joke">This is basically how I approach eating a burrito bowl too</div>
+      </section>
+
+      <section data-background-class="break-down">
+        <h2>Breaking Down the Dispatch System</h2>
+        
+        <div class="animation-container" style="position: relative; height: 450px; margin: 0 auto; overflow: hidden;">
+          <!-- Step 1: Old System - Monolithic Block -->
+          <div class="fragment fade-in" data-fragment-index="1" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
+            <div style="background: rgba(255,0,0,0.2); border: 2px solid #ff6666; border-radius: 8px; padding: 15px; text-align: center;">
+              <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Legacy Monolithic System</h3>
+              <div style="display: flex; flex-wrap: wrap; justify-content: center; font-size: 0.8em;">
+                <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">5000+ line PHP files</div>
+                <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">jQuery spaghetti code</div>
+                <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">Session state management</div>
+                <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">Direct CMS DB coupling</div>
+              </div>
+              <div style="margin-top: 10px; font-size: 0.8em; color: #ff6666;">❌ Queue stalls with any issue</div>
+              <div style="font-size: 0.8em; color: #ff6666;">❌ Can't prioritize urgent orders</div>
+              <div style="font-size: 0.8em; color: #ff6666;">❌ Device-specific implementation</div>
+            </div>
+          </div>
+          
+          <!-- Step 2: Breaking it down - show the problem being split -->
+          <div class="fragment fade-out" data-fragment-index="2" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
+            <div style="background: rgba(255,0,0,0.2); border: 2px solid #ff6666; border-radius: 8px; padding: 15px; text-align: center;">
+              <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Legacy Monolithic System</h3>
+              <!-- Same content as above, this will fade out -->
+            </div>
+          </div>
+          
+          <!-- Step 3: Show the components breaking apart -->
+          <div class="fragment fade-in" data-fragment-index="2" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 700px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+              <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
+                <h4 style="margin: 0 0 5px 0; font-size: 1em;">Core Job Management</h4>
+                <div style="font-size: 0.8em;">Job creation & validation</div>
+              </div>
+              <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
+                <h4 style="margin: 0 0 5px 0; font-size: 1em;">Hardware Management</h4>
+                <div style="font-size: 0.8em;">Device-agnostic design</div>
+              </div>
+              <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
+                <h4 style="margin: 0 0 5px 0; font-size: 1em;">Carrier Integration</h4>
+                <div style="font-size: 0.8em;">Strategy pattern for carriers</div>
+              </div>
+              <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
+                <h4 style="margin: 0 0 5px 0; font-size: 1em;">UI Layer</h4>
+                <div style="font-size: 0.8em;">Detached Vue.js frontend</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 4: Show the new architecture -->
+          <div class="fragment fade-in" data-fragment-index="3" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 700px;">
+            <div style="background: rgba(0,100,255,0.2); border: 2px solid #3399ff; border-radius: 8px; padding: 15px; text-align: center;">
+              <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">New Microservice Architecture</h3>
+              
+              <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                <!-- External Systems -->
+                <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
+                  CMS
+                </div>
+                <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
+                  Other Systems
+                </div>
+                <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
+                  Any Browser
+                </div>
+              </div>
+              
+              <!-- API Layer -->
+              <div style="background: rgba(0,150,255,0.3); border: 1px solid #3399ff; border-radius: 5px; padding: 5px; margin-bottom: 10px; font-size: 0.7em;">
+                OpenAPI Specification / Webhooks
+              </div>
+              
+              <!-- Core Services -->
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
+                  Job Service
+                </div>
+                <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
+                  Carrier Manager
+                </div>
+                <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
+                  Device Service
+                </div>
+              </div>
+              
+              <!-- Database -->
+              <div style="background: rgba(150,100,200,0.3); border: 1px solid #9966cc; border-radius: 5px; padding: 5px; font-size: 0.7em;">
+                Database (Hardware Agnostic Configuration)
+              </div>
+              
+              <div style="margin-top: 10px; font-size: 0.8em; color: #00cc66;">✓ Cherry-pick urgent orders</div>
+              <div style="font-size: 0.8em; color: #00cc66;">✓ Works on any device with a browser</div>
+              <div style="font-size: 0.8em; color: #00cc66;">✓ Isolated from CMS failures</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fragment" data-fragment-index="4">
+          <p style="font-size: 0.9em; margin-top: 20px;">Breaking down the monolith allowed us to:</p>
+          <ul style="font-size: 0.8em;">
+            <li>Isolate failures to prevent queue stalls</li>
+            <li>Implement order prioritization</li>
+            <li>Create a device-agnostic solution</li>
+            <li>Add new warehouses via simple DB updates</li>
+          </ul>
+        </div>
       </section>
 
       <!-- Real Example - Breaking It Down -->
@@ -473,7 +686,7 @@
           <div class="step-content"><strong>Break it down: SOLID services with clear responsibilities</strong></div>
         </div>
         
-        <img src="/api/placeholder/500/300" alt="Galaxy brain meme with increasingly complex problem solving" class="meme-image fragment" />
+        <img src="images/galaxy-brain.jpeg" alt="Galaxy brain meme with increasingly complex problem solving" class="meme-image fragment" />
         
         <div class="fragment">
           <p>Architecture highlights:</p>
@@ -549,7 +762,7 @@
             </div>
           </div>
           <div>
-            <img src="/api/placeholder/400/300" alt="It's Not Much But It's Honest Work meme" class="meme-image fragment" />
+            <img src="images/honest-work.jpeg" alt="It's Not Much But It's Honest Work meme" class="meme-image fragment" />
           </div>
         </div>
         
@@ -569,7 +782,7 @@
         
         <p>Questions?</p>
         
-        <img src="/api/placeholder/500/350" alt="Batman slapping Robin meme about fixing bugs in production" class="meme-image fragment" />
+        <img src="images/batman-robin.jpeg" alt="Batman slapping Robin meme about fixing bugs in production" class="meme-image fragment" />
         
         <div class="joke">Questions are like bugs - better to find them now than later in production</div>
       </section>
@@ -585,7 +798,11 @@
       history: true,
       center: true,
       transition: 'slide',
-      backgroundTransition: 'fade'
+      backgroundTransition: 'fade',
+      // Add these lines to control scaling
+      scale: 0.85, // Scales content down to 85%
+      minScale: 0.5, // Minimum scale factor
+      maxScale: 1.0  // Maximum scale factor
       // Removed plugins reference since we're not using code highlighting in this presentation
     });
   </script>
