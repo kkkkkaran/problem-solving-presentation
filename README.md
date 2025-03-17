@@ -27,12 +27,25 @@ This presentation is built using [reveal.js](https://revealjs.com/), the HTML pr
 - Custom styling
 - Mobile-friendly design
 
+## License
+
+This presentation is licensed under the MIT License with Attribution Requirement. 
+
+You are free to:
+- Use this code for personal or commercial purposes
+- Modify and distribute the code
+- Include it in your own projects
+
+Under the following conditions:
+- You must give appropriate credit to Karan Katnani
+- Include a link to the original repository
+- Include the license text in your project
+
+For more details, see the [LICENSE](LICENSE) file.
+
 ## Credits
 
+- Original Author: [Karan Katnani](https://au.linkedin.com/in/karan-katnani)
 - Presentation framework: [reveal.js](https://github.com/hakimel/reveal.js)
 - Theme: Modified version of the 'blood' theme from reveal.js
 - Icons and styling: Custom CSS built on reveal.js foundations
-
-## License
-
-This presentation content is © 2024, but the reveal.js framework is MIT licensed.
