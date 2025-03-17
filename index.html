@@ -6,7 +6,7 @@
   <title>The Art of Problem Solving</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/blood.min.css" id="theme">
   <!-- Theme used for syntax highlighting of code -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai.min.css">
   
@@ -23,7 +23,6 @@
       max-width: 90%;
       max-height: 300px;
       margin: 0 auto;
-      display: block;
       border-radius: 5px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
@@ -32,29 +31,22 @@
       font-family: 'Segoe UI', Helvetica, sans-serif;
     }
     
-    .reveal h1, .reveal h2, .reveal h3 {
+    .reveal h2, .reveal h3, .reveal h4 {
       font-weight: 700;
       text-transform: none;
       margin-bottom: 0.8em;
     }
     
-    .reveal h1 {
-      font-size: 2em;
+    .reveal h2 {
       color: var(--primary);
     }
     
-    .reveal h2 {
-      font-size: 1.6em;
+    .reveal h3 {
       color: var(--secondary);
     }
     
-    .reveal h3 {
-      font-size: 1.2em;
+    .reveal h4 {
       color: var(--accent);
-    }
-    
-    .reveal p, .reveal li {
-      font-size: 1em;
     }
     
     .reveal ul {
@@ -97,7 +89,6 @@
     
     .reveal .step-content {
       flex-grow: 1;
-      font-size: 1.1em;
     }
     
     .reveal blockquote {
@@ -124,7 +115,6 @@
     .reveal section img {
       border: none;
       box-shadow: none;
-      max-height: 400px;
     }
     
     .reveal .comparison {
@@ -133,8 +123,9 @@
     }
     
     .reveal .comparison > div {
+      margin: 0.5em;
       text-align: center;
-      padding: 1em;
+      padding: 0.8em;
       border-radius: 8px;
     }
     
@@ -200,103 +191,6 @@
     .reveal .slide-background.thank-you {
       background: linear-gradient(135deg, #263238, #37474f);
     }
-    
-    /* Add these styles to fix the vertical overflow */
-    .reveal .slides {
-      height: 90vh !important; /* Adjust percentage as needed */
-    }
-
-    .reveal .slides section {
-      max-height: 90vh !important;
-      overflow: auto !important;
-      scrollbar-width: thin; /* For Firefox */
-      -ms-overflow-style: none; /* For Internet Explorer and Edge */
-    }
-    
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .reveal .slides section::-webkit-scrollbar {
-      display: none;
-    }
-    
-    /* Only show scrollbars when actually scrolling */
-    .reveal .slides section {
-      overflow-y: auto !important;
-    }
-    
-    /* Additional spacing adjustments for problem slide */
-    .reveal .problem-slide h2 {
-      margin-bottom: 10px !important;
-    }
-    
-    .reveal .problem-slide p {
-      margin: 5px 0 !important;
-    }
-    
-    .reveal .problem-slide .meme-image {
-      max-height: 180px !important;
-      margin: 5px auto !important;
-    }
-    
-    .reveal .problem-slide .comparison {
-      margin-top: 5px !important;
-    }
-    
-    .reveal .problem-slide h3 {
-      margin: 5px 0 !important;
-      font-size: 1em !important;
-    }
-    
-    .reveal .problem-slide ul {
-      margin: 0 0 5px 15px !important;
-    }
-    
-    .reveal .problem-slide li {
-      margin-bottom: 2px !important;
-    }
-    
-    /* Reduce font sizes for better fit */
-    .reveal h1 {
-      font-size: 2em; /* Reduced from 2.5em */
-    }
-    
-    .reveal h2 {
-      font-size: 1.6em; /* Reduced from 1.8em */
-    }
-    
-    .reveal h3 {
-      font-size: 1.2em; /* Reduced from 1.4em */
-    }
-    
-    .reveal p, .reveal li {
-      font-size: 1em; /* Reduced from 1.2em */
-    }
-    
-    .reveal .step-content {
-      font-size: 1.1em; /* Reduced from 1.3em */
-    }
-    
-    /* Make images more responsive */
-    .meme-image {
-      max-height: 250px !important; /* Reduced from 300px */
-    }
-    
-    /* Add responsive scaling for different screen sizes */
-    @media (max-width: 1200px) {
-      .reveal h1 { font-size: 1.8em; }
-      .reveal h2 { font-size: 1.4em; }
-      .reveal h3 { font-size: 1.1em; }
-      .reveal p, .reveal li { font-size: 0.9em; }
-      .meme-image { max-height: 220px !important; }
-    }
-    
-    @media (max-width: 800px) {
-      .reveal h1 { font-size: 1.6em; }
-      .reveal h2 { font-size: 1.2em; }
-      .reveal h3 { font-size: 1em; }
-      .reveal p, .reveal li { font-size: 0.8em; }
-      .reveal .step-content { font-size: 0.9em; }
-      .meme-image { max-height: 180px !important; }
-    }
   </style>
 </head>
 <body>
@@ -304,15 +198,15 @@
     <div class="slides">
       <!-- Title Slide -->
       <section data-background-class="title-slide">
-        <h1>The Art of Problem Solving</h1>
-        <h3>Breaking Down Complex Challenges</h3>
+        <h2>The Art of Problem Solving</h2>
+        <h4>Breaking Down Complex Challenges</h4>
         <p>PHP Melb Meetup</p>
         <div class="joke">I promise this won't be as painful as debugging CSS</div>
       </section>
 
       <!-- About Me -->
       <section data-background-class="about-me">
-        <h2>About Me</h2>
+        <h3>About Me</h3>
         <ul>
           <li class="fragment">Señor Software Engineer at Five9</li>
           <li class="fragment">Ex Mr.Fixit at Aussie Broadband</li>
@@ -325,348 +219,415 @@
 
       <!-- The Problem with Problems -->
       <section data-background-class="problem" class="problem-slide">
-        <h2>The Problem with Problems</h2>
-        <p>Why do we struggle with complex challenges?</p>
+        <h3>The Problem with Problems</h3>
+        <h4>Why do we struggle with complex challenges?</h4>
         
-        <img src="images/this-is-fine-dog.jpeg" alt="Dog at computer with room on fire meme" class="meme-image fragment" />
-        <p class="fragment">This is fine. I'm just fixing "one small bug" for 8 hours.</p>
+        <div class="fragment">
+          <img src="images/how-to-draw-owl.webp" alt="How to draw an owl: 1. Draw two circles 2. Draw the rest of the owl" class="meme-image" />
+        </div>
         
-        <div class="comparison fragment">
-          <div class="before">
-            <h3>Common Approaches</h3>
-            <ul>
-              <li>Solution-first thinking</li>
-              <li>Monolithic approaches</li>
-              <li>Technology-driven decisions</li>
-            </ul>
-          </div>
-          <div class="after">
-            <h3>Resulting Issues</h3>
-            <ul>
-              <li>Wrong solutions</li>
-              <li>Overwhelm & paralysis</li>
-              <li>Square pegs, round holes</li>
-            </ul>
+        <div class="fragment" style="margin-top: 2em;">
+          <h4>Real Problems We've All Faced:</h4>
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1em;">
+            <div>
+              <ul>
+                <li class="fragment">The "simple task" that revealed a maze of dependencies</li>
+                <li class="fragment">The monolithic solution that became unmaintainable</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li class="fragment">The project estimate that was off by 300%</li>
+                <li class="fragment">The complex feature no one could understand</li>
+              </ul>
+            </div>
           </div>
         </div>
+        
+        <aside class="notes">
+          - This slide is about recognizing common patterns in how we approach problems incorrectly
+          
+          - The "draw the rest of the owl" meme perfectly illustrates how we often skip the crucial steps between problem and solution
+          
+          - It shows how we struggle with complex challenges because we don't break them down into manageable steps
+          
+          - The "quick fix" example: Talk about that time you promised a 1-hour fix that cascaded into days of work. "Just change this one line" turned into refactoring an entire module because of unexpected dependencies.
+          
+          - The refactor example: Share a story about a well-intentioned refactoring that broke critical functionality. Maybe mention how tests would have helped, but the original code was too complex to easily test.
+          
+          - The wrong problem example: Talk about building a feature customers didn't actually want or need. "We spent 3 months building an advanced filtering system, but users just wanted a simple search box."
+          
+          - The scaling example: Mention a system that worked perfectly in development but collapsed under real-world load. "Our elegant solution worked great for 10 users but fell apart with 1000."
+          
+          - Transition: "These problems all share a common thread - approaching complex challenges without a systematic method to break them down."
+        </aside>
       </section>
 
       <!-- A Better Way -->
       <section data-background-class="better-way">
         <h2>A Better Way</h2>
-        
-        <div class="step fragment">
-          <div class="step-number">1</div>
-          <div class="step-content"><strong>Visualize the end goal</strong> ✓</div>
-        </div>
-        
-        <div class="step fragment">
-          <div class="step-number">2</div>
-          <div class="step-content"><strong>Work backwards</strong> ←</div>
-        </div>
-        
-        <div class="step fragment">
-          <div class="step-number">3</div>
-          <div class="step-content"><strong>Break it down</strong> ⊟</div>
-        </div>
-        
-        <img src="images/drake-meme.jpeg" alt="Drake meme with rejecting complex solutions and approving simple breakdown" class="meme-image fragment" />
-        
-        <p class="fragment">I'll walk you through how we applied this to a real warehouse dispatch system</p>
-        
-        <div class="joke">No, this isn't how to make a sandwich, though that would be a more delicious presentation</div>
-      </section>
-
-      <!-- Step 1 - Visualize the End Goal -->
-      <section data-background-class="visualize">
-        <h2>Step 1 - Visualize the End Goal</h2>
-        <p>Start with the destination in mind</p>
-        
         <div class="grid">
-          <div>
-            <ul>
-              <li class="fragment highlight-current-blue">What does success actually look like?</li>
-              <li class="fragment highlight-current-blue">What problem are we really solving?</li>
-              <li class="fragment highlight-current-blue">Who benefits and how?</li>
-            </ul>
+          <div class=""fragment>
+            <div class="step fragment">
+              <div class="step-number">1</div>
+              <div class="step-content"><strong>Visualize the end goal</strong> ✓</div>
+            </div>
             
-            <p class="fragment">For our dispatch system:</p>
-            <ul class="fragment">
-              <li>Efficient warehouse operations</li>
-              <li>Real-time tracking of jobs</li>
-              <li>Automated carrier integration</li>
-            </ul>
+            <div class="step fragment">
+              <div class="step-number">2</div>
+              <div class="step-content"><strong>Work backwards</strong> ←</div>
+            </div>
+            
+            <div class="step fragment">
+              <div class="step-number">3</div>
+              <div class="step-content"><strong>Break it down</strong> ⊟</div>
+            </div>
           </div>
-          <div>
-            <img src="images/ikea-instructions.jpeg" alt="IKEA instruction confusion meme" class="meme-image fragment" />
+          
+          <div class="fragment">
+            <img src="images/steps-to-success.jpeg" alt="Steps to success showing progression through the three steps" class="meme-image fragment" style="max-height: 40vh;" />
           </div>
+          
         </div>
+    
+        <div class="joke">No, this isn't how to make a sandwich, though that would be a more delicious presentation</div>
         
-        <blockquote class="fragment">
-          "If you don't know where you're going, any road will get you there."
-        </blockquote>
-        
-        <div class="joke">Starting without a clear vision is like building IKEA furniture without the final picture</div>
+        <aside class="notes">
+          - This slide introduces the three-step methodology that forms the core of my talk
+          - The steps build on each other in a logical progression
+          - Visualize: First, you need to clearly define what success looks like
+          - Work backwards: Then identify the path from end goal back to where you are now
+          - Break it down: Finally, divide the journey into manageable pieces
+          - The steps-to-success image reinforces the methodical, progressive nature of this approach
+          - This is a general framework that can be applied to any complex problem
+          - I'll be showing concrete examples of how we applied this to real coding challenges
+        </aside>
       </section>
 
-      <!-- Real Example - Visualizing -->
       <section data-background-class="visualize">
-        <h2>Real Example - Visualizing the Goal</h2>
-        <h3>Warehouse Dispatch System at Aussie Broadband</h3>
-        
-        <div class="grid">
-          <div>
-            <h3>Legacy System Problems:</h3>
-            <ul>
-              <li>5000+ line monolithic files</li>
-              <li>Originally for 1 SKU, hacked to handle 50+</li>
-              <li>Tightly coupled to legacy WideCMS</li>
-              <li>Incompatible with PHP 8 upgrade</li>
-            </ul>
+        <section data-background-class="visualize">
+          <h2>Step 1 - Visualize the End Goal</h2>
+          
+          <div class="grid fragment">
+            <div class="fragment">
+              <img src="images/ikea-instructions.jpeg" alt="IKEA instruction confusion meme" class="meme-image" style="max-height: 40vh;"/>
+              <div class="joke">Starting without a clear vision is like building IKEA furniture without the final picture</div>
+            </div>
+            <div class="fragment">
+              <ul>
+                <li class="fragment highlight-current-blue">What problem are we really solving?</li>
+                <li class="fragment highlight-current-blue">What does success actually look like?</li>
+                <li class="fragment highlight-current-blue">Who benefits and how?</li>
+              </ul>
+            
+            </div>
           </div>
-          <div>
-            <h3>Vision:</h3>
-            <ul>
-              <li>Microservice architecture</li>
-              <li>PHP 8.3 & Laravel 12</li>
-              <li>Detached Vue.js frontend</li>
-              <li>Headless capability</li>
-            </ul>
+          
+          <blockquote class="fragment">
+            "If you don't know where you're going, any road will get you there."
+          </blockquote>
+          
+          
+        </section>
+  
+        <!-- Real Example - Visualizing -->
+        <section data-background-class="visualize">
+          <h2>Real Example - Visualizing the Goal</h2>
+          <h3>Warehouse Dispatch System at Aussie Broadband</h3>
+          
+          <div class="grid">
+            <div>
+              <h3>Developer Experience Hell:</h3>
+              <ul>
+                <li class="fragment">Hardcoded products requiring full deployment cycles</li>
+                <li class="fragment">No testing possible - unit, feature, or local</li>
+                <li class="fragment">1+ hour CI pipeline for any change</li>
+                <li class="fragment">Session-based spaghetti code with extreme cognitive load</li>
+                <li class="fragment">Key personnel risk - "you touch it, you own it"</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Business Impact:</h3>
+              <ul>
+                <li class="fragment">New products needed developer involvement</li>
+                <li class="fragment">Warehouse operations stalling on edge cases</li>
+                <li class="fragment">Ineffective order prioritization</li>
+                <li class="fragment">Hardware-locked dispatch kiosks</li>
+                <li class="fragment">Complex location expansion process</li>
+              </ul>
+            </div>
           </div>
-        </div>
-        
-        <blockquote class="fragment">
-          "Instead of just 'making it work with PHP 8', we recognized an opportunity to solve deeper architectural problems."
-        </blockquote>
-        
-        <div class="joke">Our first attempt looked more like a Rube Goldberg machine</div>
+          
+          <div class="joke">It was like playing Jenga with a production system</div>
+          
+          <aside class="notes">
+            - The DX problems created a vicious cycle: high risk meant only experts could change the code
+            - Business impact was multiplicative: each new product or location amplified existing problems
+            - This was more than just technical debt - it was actively holding back business growth
+          </aside>
+        </section>  
+
+          <section>
+            <h2>The Vision</h2>
+            <h3>Breaking Free from Legacy Constraints</h3>
+            
+            <div class="grid">
+              <div>
+                <h4>Technical Goals:</h4>
+                <ul>
+                  <li class="fragment">Configuration-driven product management</li>
+                  <li class="fragment">Comprehensive testing suite</li>
+                  <li class="fragment">Independent service deployments</li>
+                  <li class="fragment">Clean, modular architecture</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Business Outcomes:</h4>
+                <ul>
+                  <li class="fragment">Self-service product management</li>
+                  <li class="fragment">Graceful failure handling</li>
+                  <li class="fragment">Smart order prioritization</li>
+                  <li class="fragment">Browser-based dispatch system</li>
+                  <li class="fragment">Easy warehouse expansion</li>
+                </ul>
+              </div>
+            </div>
+            
+            <blockquote class="fragment">
+              "Instead of just 'making it work with PHP 8', we saw an opportunity to transform warehouse operations."
+            </blockquote>
+            
+            <div class="joke">Our first attempt looked more like a Rube Goldberg machine, but at least it had tests!</div>
+            
+            <aside class="notes">
+              - Vision focused on breaking these cycles through automation and configuration
+              - Key insight: Moving from "developer-dependent" to "developer-enabled" system
+              - Each technical goal directly enabled a business outcome
+              - The transformation wasn't just technical - it changed how the business could operate
+            </aside>
+          </section>
+        </section>
       </section>
+      
 
       <!-- Step 2 - Work Backwards -->
-      <section data-background-class="backwards">
-        <h2>Step 2 - Work Backwards</h2>
-        <p>Find your starting point</p>
-        
-        <img src="images/gps-recalculating.jpeg" alt="GPS recalculating route meme" class="meme-image fragment" />
-        
-        <ul>
-          <li class="fragment highlight-current-red">Identify critical requirements</li>
-          <li class="fragment highlight-current-red">Map dependencies</li>
-          <li class="fragment highlight-current-red">Find the shortest path from end to start</li>
-        </ul>
-        
-        <blockquote class="fragment">
-          "Begin with the end in mind, then figure out how to get there."
-        </blockquote>
-        
-        <div class="joke">GPS manufacturers missed their chance with the "figure out where you're going first" button</div>
-      </section>
+      <section>
+        <section data-background-class="backwards">
+          <h2>Step 2 - Work Backwards</h2>
+          <p>Find your starting point</p>
+          
+          <div class="grid">
+            <img src="images/gps-recalculating.jpg" alt="GPS recalculating route meme" class="meme-image fragment" />
+          
+            <ul class="fragment">
+              <li class="fragment highlight-current-red">Identify critical requirements</li>
+              <li class="fragment highlight-current-red">Map dependencies</li>
+              <li class="fragment highlight-current-red">Find the shortest path from end to start</li>
+            </ul>
+          </div>
+          
+          <blockquote class="fragment">
+            "Begin with the end in mind, then figure out how to get there."
+          </blockquote>
+          
+          <div class="joke">GPS manufacturers missed their chance with the "figure out where you're going first" button</div>
+        </section>
 
-      <!-- Real Example - Working Backwards -->
-      <section data-background-class="backwards">
-        <h2>Real Example - Working Backwards</h2>
-        <h3>Dispatch System Dependencies</h3>
-        
-        <div class="grid">
-          <div>
-            <h3>Critical Path:</h3>
-            <ul>
-              <li>Job creation/validation</li>
-              <li>Warehouse & device assignment</li>
-              <li>Shipping label generation</li>
-              <li>Carrier integration</li>
-            </ul>
+        <!-- Real Example - Working Backwards -->
+        <section data-background-class="backwards">
+          <h2>Real Example - Working Backwards</h2>
+          <h3>Dispatch System Dependencies</h3>
+          
+          <div class="grid">
+            <div>
+              <h3>Critical Path:</h3>
+              <ul>
+                <li>Job creation/validation</li>
+                <li>Warehouse & device assignment</li>
+                <li>Shipping label generation</li>
+                <li>Carrier integration</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Dependencies:</h3>
+              <ul>
+                <li>Shipping Carrier Interface</li>
+                <li>Inventory Service</li>
+                <li>Printing Service</li>
+                <li>Webhook notifications</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h3>Dependencies:</h3>
-            <ul>
-              <li>Shipping Carrier Interface</li>
-              <li>Inventory Service</li>
-              <li>Printing Service</li>
-              <li>Webhook notifications</li>
-            </ul>
-          </div>
-        </div>
-        
-        <p class="fragment">Key insight: We needed a <strong>strategy pattern</strong> for shipping carriers</p>
-        <p class="fragment">Created <code>ShippingCarrierManager</code> to abstract AusPost vs StarTrack implementations</p>
-        
-        <blockquote>
-          "By starting with the end-to-end dispatch process and working backwards, we identified the key integration points we needed to solve first."
-        </blockquote>
+          
+          <p class="fragment">Key insight: We needed a <strong>strategy pattern</strong> for shipping carriers</p>
+          <p class="fragment">Created <code>ShippingCarrierManager</code> to abstract AusPost vs StarTrack implementations</p>
+          
+          <blockquote>
+            "By starting with the end-to-end dispatch process and working backwards, we identified the key integration points we needed to solve first."
+          </blockquote>
+        </section>    
       </section>
 
       <!-- Step 3 - Break It Down -->
-      <section data-background-class="break-down">
-        <h2>Step 3 - Break It Down</h2>
-        <p>Create achievable components</p>
-        
-        <div class="grid">
-          <div>
-            <ul>
-              <li class="fragment highlight-current-blue">Divide by function</li>
-              <li class="fragment highlight-current-blue">Create logical groupings</li>
-              <li class="fragment highlight-current-blue">Keep components manageable (1-2 day tasks)</li>
-            </ul>
+      <section> 
+        <section data-background-class="break-down">
+          <h2>Step 3 - Break It Down</h2>
+          <p>Create achievable components</p>
+          
+          <div class="grid">
+            <div>
+              <ul>
+                <li class="fragment highlight-current-blue">Divide by function</li>
+                <li class="fragment highlight-current-blue">Create logical groupings</li>
+                <li class="fragment highlight-current-blue">Keep components manageable (1-2 day tasks)</li>
+              </ul>
+              
+              <blockquote class="fragment">
+                "The best way to eat an elephant is one bite at a time."
+              </blockquote>
+            </div>
+            <div>
+              <img src="images/breaking-it-down.jpg" alt="Breaking it down visualisation meme" class="meme-image" />
+            </div>
+          </div>
+          
+          <div class="joke">This is basically how I approach eating a burrito bowl too</div>
+        </section>
+
+        <section data-background-class="break-down">
+          <h2>Breaking Down the Dispatch System</h2>
+          
+          <div class="animation-container" style="position: relative; height: 450px; margin: 0 auto; overflow: hidden;">
+            <!-- Step 1: Old System - Monolithic Block -->
+            <div class="fragment fade-in" data-fragment-index="1" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
+              <div style="background: rgba(255,0,0,0.2); border: 2px solid #ff6666; border-radius: 8px; padding: 15px; text-align: center;">
+                <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Legacy Monolithic System</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; font-size: 0.8em;">
+                  <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">5000+ line PHP files</div>
+                  <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">jQuery spaghetti code</div>
+                  <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">Session state management</div>
+                  <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">Direct CMS DB coupling</div>
+                </div>
+                <div style="margin-top: 10px; font-size: 0.8em; color: #ff6666;">❌ Queue stalls with any issue</div>
+                <div style="font-size: 0.8em; color: #ff6666;">❌ Can't prioritize urgent orders</div>
+                <div style="font-size: 0.8em; color: #ff6666;">❌ Device-specific implementation</div>
+              </div>
+            </div>
             
-            <blockquote class="fragment">
-              "The best way to eat an elephant is one bite at a time."
-            </blockquote>
-          </div>
-          <div>
-            <img src="images/how-to-draw-owl.jpeg" alt="How to draw an owl meme - two circles then complete owl" class="meme-image fragment" />
-          </div>
-        </div>
-        
-        <div class="joke">This is basically how I approach eating a burrito bowl too</div>
-      </section>
-
-      <section data-background-class="break-down">
-        <h2>Breaking Down the Dispatch System</h2>
-        
-        <div class="animation-container" style="position: relative; height: 450px; margin: 0 auto; overflow: hidden;">
-          <!-- Step 1: Old System - Monolithic Block -->
-          <div class="fragment fade-in" data-fragment-index="1" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
-            <div style="background: rgba(255,0,0,0.2); border: 2px solid #ff6666; border-radius: 8px; padding: 15px; text-align: center;">
-              <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Legacy Monolithic System</h3>
-              <div style="display: flex; flex-wrap: wrap; justify-content: center; font-size: 0.8em;">
-                <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">5000+ line PHP files</div>
-                <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">jQuery spaghetti code</div>
-                <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">Session state management</div>
-                <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">Direct CMS DB coupling</div>
+            <!-- Step 2: Breaking it down - show the problem being split -->
+            <div class="fragment fade-out" data-fragment-index="2" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
+              <div style="background: rgba(255,0,0,0.2); border: 2px solid #ff6666; border-radius: 8px; padding: 15px; text-align: center;">
+                <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Legacy Monolithic System</h3>
+                <!-- Same content as above, this will fade out -->
               </div>
-              <div style="margin-top: 10px; font-size: 0.8em; color: #ff6666;">❌ Queue stalls with any issue</div>
-              <div style="font-size: 0.8em; color: #ff6666;">❌ Can't prioritize urgent orders</div>
-              <div style="font-size: 0.8em; color: #ff6666;">❌ Device-specific implementation</div>
+            </div>
+            
+            <!-- Step 3: Show the components breaking apart -->
+            <div class="fragment fade-in" data-fragment-index="2" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 700px;">
+              <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
+                  <h4 style="margin: 0 0 5px 0; font-size: 1em;">Core Job Management</h4>
+                  <div style="font-size: 0.8em;">Job creation & validation</div>
+                </div>
+                <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
+                  <h4 style="margin: 0 0 5px 0; font-size: 1em;">Hardware Management</h4>
+                  <div style="font-size: 0.8em;">Device-agnostic design</div>
+                </div>
+                <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
+                  <h4 style="margin: 0 0 5px 0; font-size: 1em;">Carrier Integration</h4>
+                  <div style="font-size: 0.8em;">Strategy pattern for carriers</div>
+                </div>
+                <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
+                  <h4 style="margin: 0 0 5px 0; font-size: 1em;">UI Layer</h4>
+                  <div style="font-size: 0.8em;">Detached Vue.js frontend</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Step 4: Show the new architecture -->
+            <div class="fragment fade-in" data-fragment-index="3" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 700px;">
+              <div style="background: rgba(0,100,255,0.2); border: 2px solid #3399ff; border-radius: 8px; padding: 15px; text-align: center;">
+                <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">New Microservice Architecture</h3>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                  <!-- External Systems -->
+                  <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
+                    CMS
+                  </div>
+                  <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
+                    Other Systems
+                  </div>
+                  <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
+                    Any Browser
+                  </div>
+                </div>
+                
+                <!-- API Layer -->
+                <div style="background: rgba(0,150,255,0.3); border: 1px solid #3399ff; border-radius: 5px; padding: 5px; margin-bottom: 10px; font-size: 0.7em;">
+                  OpenAPI Specification / Webhooks
+                </div>
+                
+                <!-- Core Services -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
+                    Job Service
+                  </div>
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
+                    Carrier Manager
+                  </div>
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
+                    Device Service
+                  </div>
+                </div>
+                
+                <!-- Database -->
+                <div style="background: rgba(150,100,200,0.3); border: 1px solid #9966cc; border-radius: 5px; padding: 5px; font-size: 0.7em;">
+                  Database (Hardware Agnostic Configuration)
+                </div>
+                
+                <div style="margin-top: 10px; font-size: 0.8em; color: #00cc66;">✓ Cherry-pick urgent orders</div>
+                <div style="font-size: 0.8em; color: #00cc66;">✓ Works on any device with a browser</div>
+                <div style="font-size: 0.8em; color: #00cc66;">✓ Isolated from CMS failures</div>
+              </div>
             </div>
           </div>
           
-          <!-- Step 2: Breaking it down - show the problem being split -->
-          <div class="fragment fade-out" data-fragment-index="2" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
-            <div style="background: rgba(255,0,0,0.2); border: 2px solid #ff6666; border-radius: 8px; padding: 15px; text-align: center;">
-              <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Legacy Monolithic System</h3>
-              <!-- Same content as above, this will fade out -->
-            </div>
-          </div>
-          
-          <!-- Step 3: Show the components breaking apart -->
-          <div class="fragment fade-in" data-fragment-index="2" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 700px;">
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-              <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
-                <h4 style="margin: 0 0 5px 0; font-size: 1em;">Core Job Management</h4>
-                <div style="font-size: 0.8em;">Job creation & validation</div>
-              </div>
-              <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
-                <h4 style="margin: 0 0 5px 0; font-size: 1em;">Hardware Management</h4>
-                <div style="font-size: 0.8em;">Device-agnostic design</div>
-              </div>
-              <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
-                <h4 style="margin: 0 0 5px 0; font-size: 1em;">Carrier Integration</h4>
-                <div style="font-size: 0.8em;">Strategy pattern for carriers</div>
-              </div>
-              <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
-                <h4 style="margin: 0 0 5px 0; font-size: 1em;">UI Layer</h4>
-                <div style="font-size: 0.8em;">Detached Vue.js frontend</div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Step 4: Show the new architecture -->
-          <div class="fragment fade-in" data-fragment-index="3" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 700px;">
-            <div style="background: rgba(0,100,255,0.2); border: 2px solid #3399ff; border-radius: 8px; padding: 15px; text-align: center;">
-              <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">New Microservice Architecture</h3>
-              
-              <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                <!-- External Systems -->
-                <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
-                  CMS
-                </div>
-                <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
-                  Other Systems
-                </div>
-                <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
-                  Any Browser
-                </div>
-              </div>
-              
-              <!-- API Layer -->
-              <div style="background: rgba(0,150,255,0.3); border: 1px solid #3399ff; border-radius: 5px; padding: 5px; margin-bottom: 10px; font-size: 0.7em;">
-                OpenAPI Specification / Webhooks
-              </div>
-              
-              <!-- Core Services -->
-              <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
-                  Job Service
-                </div>
-                <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
-                  Carrier Manager
-                </div>
-                <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
-                  Device Service
-                </div>
-              </div>
-              
-              <!-- Database -->
-              <div style="background: rgba(150,100,200,0.3); border: 1px solid #9966cc; border-radius: 5px; padding: 5px; font-size: 0.7em;">
-                Database (Hardware Agnostic Configuration)
-              </div>
-              
-              <div style="margin-top: 10px; font-size: 0.8em; color: #00cc66;">✓ Cherry-pick urgent orders</div>
-              <div style="font-size: 0.8em; color: #00cc66;">✓ Works on any device with a browser</div>
-              <div style="font-size: 0.8em; color: #00cc66;">✓ Isolated from CMS failures</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="fragment" data-fragment-index="4">
-          <p style="font-size: 0.9em; margin-top: 20px;">Breaking down the monolith allowed us to:</p>
-          <ul style="font-size: 0.8em;">
-            <li>Isolate failures to prevent queue stalls</li>
-            <li>Implement order prioritization</li>
-            <li>Create a device-agnostic solution</li>
-            <li>Add new warehouses via simple DB updates</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Real Example - Breaking It Down -->
-      <section data-background-class="break-down">
-        <h2>Real Example - Breaking It Down</h2>
-        <h3>Dispatch System Components</h3>
-        
-        <div class="grid">
-          <div>
-            <ul>
-              <li>Core job management</li>
-              <li>Hardware & device management</li>
-              <li>Carrier integration system</li>
-              <li>Boxing & label generation</li>
+          <div class="fragment" data-fragment-index="4">
+            <p style="font-size: 0.9em; margin-top: 20px;">Breaking down the monolith allowed us to:</p>
+            <ul style="font-size: 0.8em;">
+              <li>Isolate failures to prevent queue stalls</li>
+              <li>Implement order prioritization</li>
+              <li>Create a device-agnostic solution</li>
+              <li>Add new warehouses via simple DB updates</li>
             </ul>
           </div>
-          <div>
-            <ul>
-              <li>User authentication</li>
-              <li>Warehouse allocation</li>
-              <li>Item scanning/validation</li>
-              <li>Event handling with observers</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="fragment">
-          <p>Each component was further broken down:</p>
-          <ul>
-            <li>Controller layer for web requests</li>
-            <li>Service layer for business logic</li>
-            <li>Model layer for data structure</li>
-            <li>Interface-based design for shipping carriers</li>
-          </ul>
-        </div>
-        
-        <div class="joke">Once we had the pieces, it's still a puzzle - but one you can actually solve</div>
-      </section>
 
+          <aside class="notes">
+            Key components we identified:
+            - Core job management: Handling creation, validation, and lifecycle
+            - Hardware & device management: Making it device-agnostic
+            - Carrier integration system: Abstracting shipping providers
+            - Boxing & label generation: Handling physical dispatch needs
+            - User authentication: Managing access control
+            - Warehouse allocation: Smart routing of orders
+            - Item scanning/validation: Quality control
+            - Event handling with observers: System-wide notifications
+
+            Each component was further broken down into:
+            - Controller layer: Handling web requests cleanly
+            - Service layer: Encapsulating business logic
+            - Model layer: Managing data structure
+            - Interface-based design: Especially important for shipping carriers
+
+            This modular approach meant:
+            - Components could be developed and tested independently
+            - New features could be added without touching existing code
+            - Teams could work in parallel on different parts
+            - Each piece had a single, clear responsibility
+          </aside>
+        </section>
+      </section>  
+      
       <!-- Putting It All Together -->
       <section data-background-class="putting-together">
         <h2>Putting It All Together</h2>
@@ -686,17 +647,7 @@
           <div class="step-content"><strong>Break it down: SOLID services with clear responsibilities</strong></div>
         </div>
         
-        <img src="images/galaxy-brain.jpeg" alt="Galaxy brain meme with increasingly complex problem solving" class="meme-image fragment" />
-        
-        <div class="fragment">
-          <p>Architecture highlights:</p>
-          <ul>
-            <li>Interface-based <code>ShippingCarrier</code> with concrete implementations</li>
-            <li>Dedicated <code>PrintingService</code> and <code>InventoryService</code></li>
-            <li>Observer pattern with <code>DispatchJobObserver</code> for webhook events</li>
-            <li>Strategy pattern in <code>ShippingCarrierManager</code></li>
-          </ul>
-        </div>
+        <img src="images/galaxy-brain.jpg" alt="Galaxy brain meme with increasingly complex problem solving" class="meme-image" />
         
         <div class="joke">Yes, I know this looks suspiciously like "draw the rest of the owl" but I promise it works</div>
       </section>
@@ -782,16 +733,17 @@
         
         <p>Questions?</p>
         
-        <img src="images/batman-robin.jpeg" alt="Batman slapping Robin meme about fixing bugs in production" class="meme-image fragment" />
-        
         <div class="joke">Questions are like bugs - better to find them now than later in production</div>
       </section>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
   <script>
     Reveal.initialize({
+      height: 1080,
+      width: 1920,
       hash: true,
       controls: true,
       progress: true,
@@ -799,11 +751,10 @@
       center: true,
       transition: 'slide',
       backgroundTransition: 'fade',
-      // Add these lines to control scaling
-      scale: 0.85, // Scales content down to 85%
-      minScale: 0.5, // Minimum scale factor
-      maxScale: 1.0  // Maximum scale factor
-      // Removed plugins reference since we're not using code highlighting in this presentation
+      scale: 0.85,
+      minScale: 0.5,
+      maxScale: 1.5,
+      plugins: [ RevealNotes ]
     });
   </script>
 </body>
