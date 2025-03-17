@@ -660,71 +660,65 @@
           <div>
             <h3>Team Benefits:</h3>
             <ul>
-              <li>Clearer communication</li>
-              <li>More accurate estimates</li>
-              <li>Easier delegation</li>
+              <li class="fragment">Clearer communication</li>
+              <li class="fragment">More accurate estimates</li>
+              <li class="fragment">Easier delegation</li>
+              <li class="fragment">Start with small, achievable goals</li>
             </ul>
           </div>
           <div>
             <h3>Technical Benefits:</h3>
             <ul>
-              <li>Faster identification of roadblocks</li>
-              <li>Higher quality solutions</li>
-              <li>More maintainable code</li>
+              <li class="fragment">Faster identification of roadblocks</li>
+              <li class="fragment">Higher quality solutions</li>
+              <li class="fragment">More maintainable code</li>
+              <li class="fragment">Testable components</li>
             </ul>
           </div>
         </div>
         
         <div class="fragment">
-          <p>For our dispatch system, specific benefits included:</p>
-          <ul>
-            <li>Service classes with single responsibilities</li>
-            <li>Polymorphic shipping carrier implementations</li>
-            <li>Clear interfaces between components</li>
-            <li>Easier testing with well-defined boundaries</li>
-          </ul>
+          <p style="font-size: 0.9em;">For our dispatch system, this approach gave us:</p>
+          <div class="grid" style="font-size: 0.8em;">
+            <div>
+              <ul>
+                <li>Specialized controllers for each aspect (Jobs, Devices, BoxSizes)</li>
+                <li>Clean model relationships with clear responsibilities</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Modular services that could be independently tested</li>
+                <li>Clear interfaces between components</li>
+              </ul>
+            </div>
+          </div>
         </div>
         
         <blockquote class="fragment">
           "Our dispatch system achieved clean separation of concerns with services that follow SOLID principles."
         </blockquote>
-      </section>
 
-      <!-- Start Small -->
-      <section data-background-class="start-small">
-        <h2>Start Small</h2>
-        <p>Try this approach on your next PHP challenge:</p>
-        
-        <div class="grid">
-          <div>
-            <div class="step fragment">
-              <div class="step-number">1</div>
-              <div class="step-content">Take 15 minutes to write out what success looks like</div>
-            </div>
-            
-            <div class="step fragment">
-              <div class="step-number">2</div>
-              <div class="step-content">Identify your 3 most critical integrations/dependencies</div>
-            </div>
-            
-            <div class="step fragment">
-              <div class="step-number">3</div>
-              <div class="step-content">Break the problem into logical controllers, models and services</div>
-            </div>
-          </div>
-          <div>
-            <img src="images/honest-work.jpeg" alt="It's Not Much But It's Honest Work meme" class="meme-image fragment" />
-          </div>
-        </div>
-        
-        <p class="fragment">In our dispatch system, this approach gave us:</p>
-        <ul class="fragment">
-          <li>Specialized controllers for each aspect (Jobs, Devices, BoxSizes, etc.)</li>
-          <li>Clean model relationships with clear responsibilities</li>
-          <li>Modular services that could be independently tested</li>
-        </ul>
-        
-        <div class="joke">If you try this approach and it doesn't work, you still have my permission to blame your product manager</div>
+        <aside class="notes">
+          How to get started with this approach:
+          - Take 15 minutes to write out what success looks like
+          - Identify your 3 most critical integrations/dependencies
+          - Break the problem into logical controllers, models and services
+
+          Real examples from our dispatch system:
+          - Started with core job management
+          - Added carrier integration one provider at a time
+          - Built device management as a separate service
+          - Gradually moved features from monolith to new services
+
+          Key to success:
+          - Start with small, achievable components
+          - Build incrementally
+          - Test each piece thoroughly
+          - Keep services focused and single-purpose
+          
+          Remember: This approach works because it makes complex problems manageable through systematic breakdown and clear boundaries between components.
+        </aside>
       </section>
 
       <!-- Thank You & Questions -->
