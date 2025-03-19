@@ -245,7 +245,11 @@
         </div>
         
         <aside class="notes">
-          The "draw the rest of the owl" meme perfectly captures our problem-solving challenges:<br><br>
+          The "draw the rest of the owl" meme perfectly captures our problem-solving challenges:<br>
+          - It shows the gap between simple starting points and complex end results<br>
+          - It illustrates how we skip crucial intermediate steps<br>
+          - It represents how we underestimate complexity<br>
+          - It mirrors how experts often forget to explain the middle steps<br><br>
           
           "Simple task" example:<br> 
           - "Just add a dropdown menu" revealed the form was hardcoded in 12 different places<br>
@@ -291,8 +295,8 @@
             </div>
           </div>
           
-          <div class="fragment">
-            <img src="images/steps-to-success.jpeg" alt="Steps to success showing progression through the three steps" class="meme-image fragment" style="max-height: 40vh;" />
+          <div class=>
+            <img src="images/steps-to-success.jpeg" alt="Steps to success showing progression through the three steps" class="meme-image" style="max-height: 40vh;" />
           </div>
           
         </div>
@@ -300,14 +304,18 @@
         <div class="joke">No, this isn't how to make a sandwich, though that would be a more delicious presentation</div>
         
         <aside class="notes">
-          - This slide introduces the three-step methodology that forms the core of my talk
-          - The steps build on each other in a logical progression
-          - Visualize: First, you need to clearly define what success looks like
-          - Work backwards: Then identify the path from end goal back to where you are now
-          - Break it down: Finally, divide the journey into manageable pieces
-          - The steps-to-success image reinforces the methodical, progressive nature of this approach
-          - This is a general framework that can be applied to any complex problem
-          - I'll be showing concrete examples of how we applied this to real coding challenges
+          This slide introduces the three-step methodology that forms the core of my talk<br><br>
+          
+          The steps build on each other in a logical progression:<br>
+          - Visualize: First, you need to clearly define what success looks like<br>
+          - Work backwards: Then identify the path from end goal back to where you are now<br>
+          - Break it down: Finally, divide the journey into manageable pieces<br><br>
+          
+          The steps-to-success image reinforces the methodical, progressive nature of this approach<br><br>
+          
+          This is a general framework that can be applied to any complex problem<br><br>
+          
+          I'll be showing concrete examples of how we applied this to real coding challenges
         </aside>
       </section>
 
@@ -333,8 +341,24 @@
           <blockquote class="fragment">
             "If you don't know where you're going, any road will get you there."
           </blockquote>
-          
-          
+
+          <aside class="notes">
+            [Rhetorical question to audience] "How many of you have tried to build IKEA furniture without looking at the final picture? How did that work out?"<br><br>
+            
+            The IKEA instruction meme illustrates why having a clear vision is so important:<br><br>
+            
+            When we skip visualization, we often build the wrong solution:<br>
+            - Building features no one will use<br>
+            - Solving symptoms instead of root causes<br>
+            - Creating technical debt through rushed implementations<br><br>
+            
+            Good questions to ask at this stage:<br>
+            - What would a perfect solution look like if we had unlimited resources?<br>
+            - How will we know when we've succeeded?<br>
+            - Who are all the stakeholders and what do they need?<br><br>
+            
+            This stage might feel like "wasting time" but it actually saves time overall
+          </aside>
         </section>
   
         <!-- Real Example - Visualizing -->
@@ -368,9 +392,77 @@
           <div class="joke">It was like playing Jenga with a production system</div>
           
           <aside class="notes">
-            - The DX problems created a vicious cycle: high risk meant only experts could change the code
-            - Business impact was multiplicative: each new product or location amplified existing problems
-            - This was more than just technical debt - it was actively holding back business growth
+            Introduction to the dispatch system:<br>
+            - This was a critical system at Aussie Broadband used for warehouse order processing<br>
+            - It handled everything from order creation to shipping label generation<br>
+            - Used by warehouse staff to fulfill customer orders for modems, routers, and other hardware<br>
+            - Originally built as a monolithic PHP application with jQuery for front-end interactions<br>
+            - Had been in production for 10+ years with minimal architectural changes<br><br>
+            
+            [What problem are we really solving?]<br>
+            - The initial request was simple: "Make it work with PHP 8"<br>
+            - But visualizing the goal helped us see the real problems beneath the surface<br>
+            - This wasn't just about PHP compatibility - it was about breaking free from fundamental limitations<br>
+            - By asking "what problem are we really solving?" we uncovered these deeper issues:<br><br>
+            
+            [H3: Developer Experience Hell]<br><br>
+            
+            [Fragment: Hardcoded products requiring full deployment cycles]<br>
+            - Every new product required code changes by developers<br>
+            - Even simple product updates needed a full deployment<br>
+            - Product catalog couldn't be managed by business users<br><br>
+            
+            [Fragment: No testing possible - unit, feature, or local]<br>
+            - Code was untestable due to tight coupling<br>
+            - No separation between business logic and presentation<br>
+            - Developers had to test manually in production<br><br>
+            
+            [Fragment: 1+ hour CI pipeline for any change]<br>
+            - Simple fixes took an entire day to deploy<br>
+            - Created bottlenecks in development workflow<br>
+            - Made quick fixes nearly impossible<br><br>
+            
+            [Fragment: Session-based spaghetti code with extreme cognitive load]<br>
+            - State management was spread across multiple files<br>
+            - Code flow was difficult to follow and understand<br>
+            - High mental overhead to make even small changes<br><br>
+            
+            [Fragment: Key personnel risk - "you touch it, you own it"]<br>
+            - Only a few developers understood the system<br>
+            - Knowledge wasn't transferable to new team members<br>
+            - Created bottlenecks and single points of failure<br><br>
+            
+            [H3: Business Impact]<br><br>
+            
+            [Fragment: New products needed developer involvement]<br>
+            - Business teams couldn't self-serve<br>
+            - Product launches delayed waiting for developer availability<br>
+            - Competitive disadvantage in fast-moving market<br><br>
+            
+            [Fragment: Warehouse operations stalling on edge cases]<br>
+            - System couldn't handle unexpected scenarios<br>
+            - Manual intervention required for exceptions<br>
+            - Created fulfillment delays and customer complaints<br><br>
+            
+            [Fragment: Ineffective order prioritization]<br>
+            - No way to expedite urgent orders<br>
+            - First-in-first-out was the only processing model<br>
+            - VIP customers experienced same delays as regular customers<br><br>
+            
+            [Fragment: Hardware-locked dispatch kiosks]<br>
+            - System only worked on specific computers<br>
+            - When hardware failed, entire dispatch station was down<br>
+            - Expensive to maintain and replace proprietary hardware<br><br>
+            
+            [Fragment: Complex location expansion process]<br>
+            - Adding new warehouses required extensive code changes<br>
+            - Each new location amplified existing problems<br>
+            - Scaling geographically was nearly impossible<br><br>
+            
+            [Joke: It was like playing Jenga with a production system]<br>
+            - Every change risked bringing down the entire system<br>
+            - We were constantly holding our breath with each deployment<br>
+            - Technical debt had reached critical levels
           </aside>
         </section>  
 
@@ -407,10 +499,22 @@
             <div class="joke">Our first attempt looked more like a Rube Goldberg machine, but at least it had tests!</div>
             
             <aside class="notes">
-              - Vision focused on breaking these cycles through automation and configuration
-              - Key insight: Moving from "developer-dependent" to "developer-enabled" system
-              - Each technical goal directly enabled a business outcome
-              - The transformation wasn't just technical - it changed how the business could operate
+              By visualizing the end goal, we transformed a PHP 8 upgrade into an opportunity for real change.<br><br>
+              
+              For developers, we envisioned:<br>
+              - Configuration-driven system: Change products without code deployments<br>
+              - Comprehensive testing: Enable confident, rapid development cycles<br>
+              - Independent services: Deploy components separately, shorter feedback loops<br>
+              - Clean architecture: Components with clear responsibilities and boundaries<br><br>
+              
+              For the business, this meant:<br>
+              - Self-service: Product teams could manage their own offerings<br>
+              - Resilience: One issue wouldn't bring down the entire system<br>
+              - Smart prioritization: Ability to expedite urgent orders when needed<br>
+              - Browser-based system: Works on any device, no proprietary hardware<br>
+              - Simple expansion: New warehouses added through configuration<br><br>
+              
+              This vision became our North Star - whenever we faced tough decisions, we'd ask: "Does this align with breaking free from legacy constraints?"
             </aside>
           </section>
         </section>
@@ -418,62 +522,85 @@
       
 
       <!-- Step 2 - Work Backwards -->
-      <section>
-        <section data-background-class="backwards">
-          <h2>Step 2 - Work Backwards</h2>
-          <p>Find your starting point</p>
+      <section data-background-class="backwards">
+        <h2>Step 2 - Work Backwards</h2>
+        <p>Find your starting point</p>
+        
+        <div class="grid">
+          <img src="images/gps-recalculating.jpg" alt="GPS recalculating route meme" class="meme-image fragment" />
+        
+          <ul class="fragment">
+            <li class="fragment highlight-current-red">Identify critical requirements</li>
+            <li class="fragment highlight-current-red">Map dependencies</li>
+            <li class="fragment highlight-current-red">Find the shortest path from end to start</li>
+          </ul>
+        </div>
+        
+        <blockquote class="fragment">
+          "Begin with the end in mind, then figure out how to get there."
+        </blockquote>
+        
+        <div class="joke">GPS manufacturers missed their chance with the "figure out where you're going first" button</div>
+        <aside class="notes" data-markdown>
+          GPS meme connection: Just like a GPS needs both destination AND current location, problem-solving requires working backwards.
           
-          <div class="grid">
-            <img src="images/gps-recalculating.jpg" alt="GPS recalculating route meme" class="meme-image fragment" />
+          Why working backwards works:
+          * Reveals dependencies you'd miss when planning forward
+          * Prevents getting stuck in implementation details too early
+          * Creates a clearer roadmap by focusing on outcomes first
           
-            <ul class="fragment">
-              <li class="fragment highlight-current-red">Identify critical requirements</li>
-              <li class="fragment highlight-current-red">Map dependencies</li>
-              <li class="fragment highlight-current-red">Find the shortest path from end to start</li>
+          Identify critical requirements:
+          * What must absolutely be true for your solution to work?
+          * What are the non-negotiable requirements?
+          * Example: "Users must be able to prioritize urgent orders"
+          
+          Map dependencies:
+          * What systems will your solution need to interact with?
+          * What data flows are necessary between components?
+          * Example: "We'll need shipping carrier APIs for labels"
+          
+          Find the shortest path:
+          * What's the minimum viable solution?
+          * Which approach gives maximum impact with minimal change?
+          * Example: "We could abstract carrier logic without changing UI first"
+          
+          Working backwards feels unnatural at first, but it's like planning a road trip by starting with your destination and working back to your driveway.
+          </aside>
+      </section>
+
+      <!-- Real Example - Working Backwards -->
+      <section data-background-class="backwards">
+        <h2>Real Example - Working Backwards</h2>
+        <h3>Dispatch System Dependencies</h3>
+        
+        <div class="grid">
+          <div>
+            <h3>Critical Path:</h3>
+            <ul>
+              <li>Job creation/validation</li>
+              <li>Warehouse & device assignment</li>
+              <li>Shipping label generation</li>
+              <li>Carrier integration</li>
             </ul>
           </div>
-          
-          <blockquote class="fragment">
-            "Begin with the end in mind, then figure out how to get there."
-          </blockquote>
-          
-          <div class="joke">GPS manufacturers missed their chance with the "figure out where you're going first" button</div>
-        </section>
-
-        <!-- Real Example - Working Backwards -->
-        <section data-background-class="backwards">
-          <h2>Real Example - Working Backwards</h2>
-          <h3>Dispatch System Dependencies</h3>
-          
-          <div class="grid">
-            <div>
-              <h3>Critical Path:</h3>
-              <ul>
-                <li>Job creation/validation</li>
-                <li>Warehouse & device assignment</li>
-                <li>Shipping label generation</li>
-                <li>Carrier integration</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Dependencies:</h3>
-              <ul>
-                <li>Shipping Carrier Interface</li>
-                <li>Inventory Service</li>
-                <li>Printing Service</li>
-                <li>Webhook notifications</li>
-              </ul>
-            </div>
+          <div>
+            <h3>Dependencies:</h3>
+            <ul>
+              <li>Shipping Carrier Interface</li>
+              <li>Inventory Service</li>
+              <li>Printing Service</li>
+              <li>Webhook notifications</li>
+            </ul>
           </div>
-          
-          <p class="fragment">Key insight: We needed a <strong>strategy pattern</strong> for shipping carriers</p>
-          <p class="fragment">Created <code>ShippingCarrierManager</code> to abstract AusPost vs StarTrack implementations</p>
-          
-          <blockquote>
-            "By starting with the end-to-end dispatch process and working backwards, we identified the key integration points we needed to solve first."
-          </blockquote>
-        </section>    
-      </section>
+        </div>
+        
+        <p class="fragment">Key insight: We needed a <strong>strategy pattern</strong> for shipping carriers</p>
+        <p class="fragment">Created <code>ShippingCarrierManager</code> to abstract AusPost vs StarTrack implementations</p>
+        
+        <blockquote>
+          "By starting with the end-to-end dispatch process and working backwards, we identified the key integration points we needed to solve first."
+        </blockquote>
+      </section>    
 
       <!-- Step 3 - Break It Down -->
       <section> 
@@ -613,22 +740,22 @@
           </div>
           
           <aside class="notes">
-            Key components we identified:
-            - Core job management: Handling creation, validation, and lifecycle
-            - Hardware & device management: Making it device-agnostic
-            - Carrier integration system: Abstracting shipping providers
-            - UI layer: Providing a flexible frontend
+            Key components we identified:<br>
+            - Core job management: Handling creation, validation, and lifecycle<br>
+            - Hardware & device management: Making it device-agnostic<br>
+            - Carrier integration system: Abstracting shipping providers<br>
+            - UI layer: Providing a flexible frontend<br><br>
             
-            This modular approach meant:
-            - Components could be developed and tested independently
-            - New features could be added without touching existing code
-            - Teams could work in parallel on different parts
-            - Each piece had a single, clear responsibility
+            This modular approach meant:<br>
+            - Components could be developed and tested independently<br>
+            - New features could be added without touching existing code<br>
+            - Teams could work in parallel on different parts<br>
+            - Each piece had a single, clear responsibility<br><br>
             
-            Breaking down the monolith allowed us to:
-            - Isolate failures to prevent queue stalls
-            - Implement order prioritization
-            - Create a device-agnostic solution
+            Breaking down the monolith allowed us to:<br>
+            - Isolate failures to prevent queue stalls<br>
+            - Implement order prioritization<br>
+            - Create a device-agnostic solution<br>
             - Add new warehouses via simple DB updates
           </aside>
         </section>
@@ -706,24 +833,22 @@
         </blockquote>
 
         <aside class="notes">
-          How to get started with this approach:
-          - Take 15 minutes to write out what success looks like
-          - Identify your 3 most critical integrations/dependencies
-          - Break the problem into logical controllers, models and services
-
-          Real examples from our dispatch system:
-          - Started with core job management
-          - Added carrier integration one provider at a time
-          - Built device management as a separate service
-          - Gradually moved features from monolith to new services
-
-          Key to success:
-          - Start with small, achievable components
-          - Build incrementally
-          - Test each piece thoroughly
-          - Keep services focused and single-purpose
+          This approach provides concrete benefits to both teams and technology:<br><br>
           
-          Remember: This approach works because it makes complex problems manageable through systematic breakdown and clear boundaries between components.
+          Team benefits are often overlooked but crucial:<br>
+          - Clearer communication means better collaboration<br>
+          - More accurate estimates improve planning<br>
+          - Easier delegation allows for better resource allocation<br><br>
+          
+          Technical benefits compound over time:<br>
+          - Faster identification of roadblocks prevents major delays<br>
+          - Higher quality solutions reduce technical debt<br>
+          - More maintainable code lowers long-term costs<br><br>
+          
+          Real examples from our implementation:<br>
+          - New carriers could be added without changing core code<br>
+          - Testing became dramatically easier with clear boundaries<br>
+          - Onboarding new developers took days instead of weeks
         </aside>
       </section>
 
