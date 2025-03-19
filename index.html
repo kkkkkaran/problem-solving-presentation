@@ -245,21 +245,28 @@
         </div>
         
         <aside class="notes">
-          - This slide is about recognizing common patterns in how we approach problems incorrectly
+          The "draw the rest of the owl" meme perfectly captures our problem-solving challenges:<br><br>
           
-          - The "draw the rest of the owl" meme perfectly illustrates how we often skip the crucial steps between problem and solution
+          "Simple task" example:<br> 
+          - "Just add a dropdown menu" revealed the form was hardcoded in 12 different places<br>
+          - What seemed like a 30-minute task became a 3-day refactoring<br><br>
           
-          - It shows how we struggle with complex challenges because we don't break them down into manageable steps
+          "Monolithic solution" example:<br>
+          - Payment processing started as 100 lines, grew to 4,000<br>
+          - Every new payment method doubled debugging time<br>
+          - No one dared touch the "working" code<br><br>
           
-          - The "quick fix" example: Talk about that time you promised a 1-hour fix that cascaded into days of work. "Just change this one line" turned into refactoring an entire module because of unexpected dependencies.
+          "Project estimate" example:<br>
+          - Team estimated 2 weeks for a newsletter integration<br>
+          - Actual time: 6 weeks due to undocumented DB structure<br>
+          - Fixing one issue uncovered three more<br><br>
           
-          - The refactor example: Share a story about a well-intentioned refactoring that broke critical functionality. Maybe mention how tests would have helped, but the original code was too complex to easily test.
+          "Complex feature" example:<br>
+          - Senior dev built sophisticated filtering system<br>
+          - Left the company, no one understood how it worked<br>
+          - Entire feature had to be rewritten from scratch<br><br>
           
-          - The wrong problem example: Talk about building a feature customers didn't actually want or need. "We spent 3 months building an advanced filtering system, but users just wanted a simple search box."
-          
-          - The scaling example: Mention a system that worked perfectly in development but collapsed under real-world load. "Our elegant solution worked great for 10 users but fell apart with 1000."
-          
-          - Transition: "These problems all share a common thread - approaching complex challenges without a systematic method to break them down."
+          Transition: "The common thread? We didn't break down the problems into manageable steps."
         </aside>
       </section>
 
@@ -494,136 +501,135 @@
           <div class="joke">This is basically how I approach eating a burrito bowl too</div>
         </section>
 
+        <!-- Breaking Down the Dispatch System -->
         <section data-background-class="break-down">
           <h2>Breaking Down the Dispatch System</h2>
           
-          <div class="animation-container" style="position: relative; height: 450px; margin: 0 auto; overflow: hidden;">
-            <!-- Step 1: Old System - Monolithic Block -->
-            <div class="fragment fade-in" data-fragment-index="1" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
-              <div style="background: rgba(255,0,0,0.2); border: 2px solid #ff6666; border-radius: 8px; padding: 15px; text-align: center;">
-                <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Legacy Monolithic System</h3>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; font-size: 0.8em;">
-                  <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">5000+ line PHP files</div>
-                  <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">jQuery spaghetti code</div>
-                  <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">Session state management</div>
-                  <div style="background: rgba(255,0,0,0.3); margin: 5px; padding: 8px; border-radius: 5px; width: 45%;">Direct CMS DB coupling</div>
-                </div>
-                <div style="margin-top: 10px; font-size: 0.8em; color: #ff6666;">❌ Queue stalls with any issue</div>
-                <div style="font-size: 0.8em; color: #ff6666;">❌ Can't prioritize urgent orders</div>
-                <div style="font-size: 0.8em; color: #ff6666;">❌ Device-specific implementation</div>
-              </div>
-            </div>
+          <!-- Step navigation controls -->
+          <div style="margin-bottom: 20px;">
+            <button class="navigate-fragment" data-fragment-index="0" style="background: #333; color: #fff; border: 1px solid #ff4081; padding: 5px 10px; margin: 0 5px; border-radius: 3px;">Step 1: Legacy</button>
+            <button class="navigate-fragment" data-fragment-index="1" style="background: #333; color: #fff; border: 1px solid #ff4081; padding: 5px 10px; margin: 0 5px; border-radius: 3px;">Step 2: Components</button>
+            <button class="navigate-fragment" data-fragment-index="2" style="background: #333; color: #fff; border: 1px solid #ff4081; padding: 5px 10px; margin: 0 5px; border-radius: 3px;">Step 3: New Architecture</button>
+          </div>
+          
+          <!-- Animation container with fixed height and position -->
+          <div style="position: relative; height: 350px; width: 700px; margin: 0 auto;">
             
-            <!-- Step 2: Breaking it down - show the problem being split -->
-            <div class="fragment fade-out" data-fragment-index="2" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
-              <div style="background: rgba(255,0,0,0.2); border: 2px solid #ff6666; border-radius: 8px; padding: 15px; text-align: center;">
-                <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Legacy Monolithic System</h3>
-                <!-- Same content as above, this will fade out -->
-              </div>
-            </div>
-            
-            <!-- Step 3: Show the components breaking apart -->
-            <div class="fragment fade-in" data-fragment-index="2" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 700px;">
-              <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-                <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
-                  <h4 style="margin: 0 0 5px 0; font-size: 1em;">Core Job Management</h4>
-                  <div style="font-size: 0.8em;">Job creation & validation</div>
-                </div>
-                <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
-                  <h4 style="margin: 0 0 5px 0; font-size: 1em;">Hardware Management</h4>
-                  <div style="font-size: 0.8em;">Device-agnostic design</div>
-                </div>
-                <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
-                  <h4 style="margin: 0 0 5px 0; font-size: 1em;">Carrier Integration</h4>
-                  <div style="font-size: 0.8em;">Strategy pattern for carriers</div>
-                </div>
-                <div style="background: rgba(0,200,100,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center; width: 45%; font-size: 0.8em;">
-                  <h4 style="margin: 0 0 5px 0; font-size: 1em;">UI Layer</h4>
-                  <div style="font-size: 0.8em;">Detached Vue.js frontend</div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Step 4: Show the new architecture -->
-            <div class="fragment fade-in" data-fragment-index="3" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 700px;">
-              <div style="background: rgba(0,100,255,0.2); border: 2px solid #3399ff; border-radius: 8px; padding: 15px; text-align: center;">
-                <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">New Microservice Architecture</h3>
+            <!-- Step 1: Legacy Monolith -->
+            <div class="fragment current-visible" data-fragment-index="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              <div style="background: rgba(255,0,0,0.2); border: 2px solid #ff6666; border-radius: 8px; padding: 15px;">
+                <h3 style="margin: 0 0 15px 0; color: #00E5FF; text-align: center;">Legacy Monolithic System</h3>
                 
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                  <!-- External Systems -->
-                  <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
-                    CMS
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div style="background: rgba(255,0,0,0.3); padding: 10px; border-radius: 5px; text-align: center;">5000+ line PHP files</div>
+                  <div style="background: rgba(255,0,0,0.3); padding: 10px; border-radius: 5px; text-align: center;">jQuery spaghetti code</div>
+                  <div style="background: rgba(255,0,0,0.3); padding: 10px; border-radius: 5px; text-align: center;">Session state management</div>
+                  <div style="background: rgba(255,0,0,0.3); padding: 10px; border-radius: 5px; text-align: center;">Direct CMS DB coupling</div>
+                </div>
+                
+                <div style="margin-top: 20px; color: #ff6666;">
+                  <div>❌ Queue stalls with any issue</div>
+                  <div>❌ Can't prioritize urgent orders</div>
+                  <div>❌ Device-specific implementation</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Step 2: Breaking into Components -->
+            <div class="fragment current-visible" data-fragment-index="1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              <div style="background: rgba(0,0,0,0.2); border: 2px solid #00cc66; border-radius: 8px; padding: 15px;">
+                <h3 style="margin: 0 0 15px 0; color: #00E5FF; text-align: center;">Modular Components</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center;">
+                    <h4 style="margin: 0 0 5px 0; color: #FFEA00;">Core Job Management</h4>
+                    <div style="font-size: 0.8em;">Job creation, validation, lifecycle</div>
                   </div>
-                  <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
-                    Other Systems
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center;">
+                    <h4 style="margin: 0 0 5px 0; color: #FFEA00;">Hardware Management</h4>
+                    <div style="font-size: 0.8em;">Device-agnostic design</div>
                   </div>
-                  <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 20%; font-size: 0.7em;">
-                    Any Browser
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center;">
+                    <h4 style="margin: 0 0 5px 0; color: #FFEA00;">Carrier Integration</h4>
+                    <div style="font-size: 0.8em;">Strategy pattern for carriers</div>
                   </div>
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 8px; padding: 10px; text-align: center;">
+                    <h4 style="margin: 0 0 5px 0; color: #FFEA00;">UI Layer</h4>
+                    <div style="font-size: 0.8em;">Detached Vue.js frontend</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Step 3: New Architecture -->
+            <div class="fragment current-visible" data-fragment-index="2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              <div style="background: rgba(0,100,255,0.2); border: 2px solid #3399ff; border-radius: 8px; padding: 15px;">
+                <h3 style="margin: 0 0 15px 0; color: #00E5FF; text-align: center;">New Microservice Architecture</h3>
+                
+                <!-- External Systems -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                  <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 30%; text-align: center; font-size: 0.8em;">CMS</div>
+                  <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 30%; text-align: center; font-size: 0.8em;">Other Systems</div>
+                  <div style="background: rgba(100,100,100,0.2); border: 1px solid #999; border-radius: 5px; padding: 5px; width: 30%; text-align: center; font-size: 0.8em;">Any Browser</div>
                 </div>
                 
                 <!-- API Layer -->
-                <div style="background: rgba(0,150,255,0.3); border: 1px solid #3399ff; border-radius: 5px; padding: 5px; margin-bottom: 10px; font-size: 0.7em;">
+                <div style="background: rgba(0,150,255,0.3); border: 1px solid #3399ff; border-radius: 5px; padding: 5px; margin-bottom: 10px; text-align: center; font-size: 0.8em;">
                   OpenAPI Specification / Webhooks
                 </div>
                 
-                <!-- Core Services -->
-                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
-                    Job Service
+                <!-- Core Services - Match the components from step 2 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; text-align: center; font-size: 0.8em;">
+                    <strong>Job Service</strong>
+                    <div style="font-size: 0.9em;">Core Job Management</div>
                   </div>
-                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
-                    Carrier Manager
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; text-align: center; font-size: 0.8em;">
+                    <strong>Device Service</strong>
+                    <div style="font-size: 0.9em;">Hardware Management</div>
                   </div>
-                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; width: 30%; font-size: 0.7em;">
-                    Device Service
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; text-align: center; font-size: 0.8em;">
+                    <strong>Carrier Manager</strong>
+                    <div style="font-size: 0.9em;">Carrier Integration</div>
+                  </div>
+                  <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; text-align: center; font-size: 0.8em;">
+                    <strong>Vue.js Frontend</strong>
+                    <div style="font-size: 0.9em;">UI Layer</div>
                   </div>
                 </div>
                 
                 <!-- Database -->
-                <div style="background: rgba(150,100,200,0.3); border: 1px solid #9966cc; border-radius: 5px; padding: 5px; font-size: 0.7em;">
+                <div style="background: rgba(150,100,200,0.3); border: 1px solid #9966cc; border-radius: 5px; padding: 5px; text-align: center; font-size: 0.8em;">
                   Database (Hardware Agnostic Configuration)
                 </div>
                 
-                <div style="margin-top: 10px; font-size: 0.8em; color: #00cc66;">✓ Cherry-pick urgent orders</div>
-                <div style="font-size: 0.8em; color: #00cc66;">✓ Works on any device with a browser</div>
-                <div style="font-size: 0.8em; color: #00cc66;">✓ Isolated from CMS failures</div>
+                <div style="margin-top: 10px; color: #00cc66; font-size: 0.8em;">
+                  <div>✓ Cherry-pick urgent orders</div>
+                  <div>✓ Works on any device with a browser</div>
+                  <div>✓ Isolated from CMS failures</div>
+                </div>
               </div>
             </div>
           </div>
           
-          <div class="fragment" data-fragment-index="4">
-            <p style="font-size: 0.9em; margin-top: 20px;">Breaking down the monolith allowed us to:</p>
-            <ul style="font-size: 0.8em;">
-              <li>Isolate failures to prevent queue stalls</li>
-              <li>Implement order prioritization</li>
-              <li>Create a device-agnostic solution</li>
-              <li>Add new warehouses via simple DB updates</li>
-            </ul>
-          </div>
-
           <aside class="notes">
             Key components we identified:
             - Core job management: Handling creation, validation, and lifecycle
             - Hardware & device management: Making it device-agnostic
             - Carrier integration system: Abstracting shipping providers
-            - Boxing & label generation: Handling physical dispatch needs
-            - User authentication: Managing access control
-            - Warehouse allocation: Smart routing of orders
-            - Item scanning/validation: Quality control
-            - Event handling with observers: System-wide notifications
-
-            Each component was further broken down into:
-            - Controller layer: Handling web requests cleanly
-            - Service layer: Encapsulating business logic
-            - Model layer: Managing data structure
-            - Interface-based design: Especially important for shipping carriers
-
+            - UI layer: Providing a flexible frontend
+            
             This modular approach meant:
             - Components could be developed and tested independently
             - New features could be added without touching existing code
             - Teams could work in parallel on different parts
             - Each piece had a single, clear responsibility
+            
+            Breaking down the monolith allowed us to:
+            - Isolate failures to prevent queue stalls
+            - Implement order prioritization
+            - Create a device-agnostic solution
+            - Add new warehouses via simple DB updates
           </aside>
         </section>
       </section>  
@@ -769,6 +775,17 @@
       minScale: 0.5,
       maxScale: 1.5,
       plugins: [ RevealNotes ]
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add click handlers after reveal initializes
+      Reveal.addEventListener('ready', function() {
+        document.querySelectorAll('.navigate-fragment').forEach(function(button) {
+          button.addEventListener('click', function() {
+            Reveal.navigateFragment(parseInt(this.getAttribute('data-fragment-index')));
+          });
+        });
+      });
     });
   </script>
 </body>
