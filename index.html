@@ -207,14 +207,24 @@
       <!-- About Me -->
       <section data-background-class="about-me">
         <h3>About Me</h3>
-        <ul>
-          <li class="fragment">Señor Software Engineer at Five9</li>
-          <li class="fragment">Ex Mr.Fixit at Aussie Broadband</li>
-          <li class="fragment">10+ years of cursing at terrible code, only to find my name in the git blame</li>
-          <li class="fragment">Casual sim racer who applies racing lines to grocery store aisles</li>
-          <li class="fragment">Professional caffeine-to-code converter with occasional side effects</li>
+        <ul class="fragment">
+          <li>Señor Software Engineer at Five9</li>
+          <li>Ex Mr.Fixit at Aussie Broadband</li>
+          <li>10+ years of cursing at terrible code, only to find my name in the git blame</li>
+          <li>Casual sim racer who applies racing lines to grocery store aisles</li>
+          <li>Professional caffeine-to-code converter with occasional side effects</li>
         </ul>
         <div class="joke">I've created enough bugs to know how to solve them</div>
+        
+        <aside class="notes">
+          And speaking of bugs and solving them - in those 10+ years of finding my name in git blame, I've noticed something interesting:<br><br>
+
+          The biggest challenges we face aren't usually the technical problems themselves, but how we approach them.<br><br>
+
+          Let's talk about why even experienced developers struggle with complex challenges, and why our standard approaches often make things worse before they make them better...<br><br>
+
+          [NEXT SLIDE - The Problem with Problems]
+        </aside>
       </section>
 
       <!-- The Problem with Problems -->
@@ -233,13 +243,13 @@
               <ul>
                 <li class="fragment">The "simple task" that revealed a maze of dependencies</li>
                 <li class="fragment">The monolithic solution that became unmaintainable</li>
-              </ul>
-            </div>
+            </ul>
+          </div>
             <div>
-              <ul>
+            <ul>
                 <li class="fragment">The project estimate that was off by 300%</li>
                 <li class="fragment">The complex feature no one could understand</li>
-              </ul>
+            </ul>
             </div>
           </div>
         </div>
@@ -279,28 +289,28 @@
         <h2>A Better Way</h2>
         <div class="grid">
           <div class=""fragment>
-            <div class="step fragment">
-              <div class="step-number">1</div>
-              <div class="step-content"><strong>Visualize the end goal</strong> ✓</div>
+        <div class="step fragment">
+          <div class="step-number">1</div>
+          <div class="step-content"><strong>Visualize the end goal</strong> ✓</div>
+        </div>
+        
+        <div class="step fragment">
+          <div class="step-number">2</div>
+          <div class="step-content"><strong>Work backwards</strong> ←</div>
+        </div>
+        
+        <div class="step fragment">
+          <div class="step-number">3</div>
+          <div class="step-content"><strong>Break it down</strong> ⊟</div>
             </div>
-            
-            <div class="step fragment">
-              <div class="step-number">2</div>
-              <div class="step-content"><strong>Work backwards</strong> ←</div>
-            </div>
-            
-            <div class="step fragment">
-              <div class="step-number">3</div>
-              <div class="step-content"><strong>Break it down</strong> ⊟</div>
-            </div>
-          </div>
-          
+        </div>
+        
           <div class=>
             <img src="images/steps-to-success.jpeg" alt="Steps to success showing progression through the three steps" class="meme-image" style="max-height: 40vh;" />
           </div>
-          
+        
         </div>
-    
+        
         <div class="joke">No, this isn't how to make a sandwich, though that would be a more delicious presentation</div>
         
         <aside class="notes">
@@ -311,8 +321,6 @@
           - Work backwards: Then identify the path from end goal back to where you are now<br>
           - Break it down: Finally, divide the journey into manageable pieces<br><br>
           
-          The steps-to-success image reinforces the methodical, progressive nature of this approach<br><br>
-          
           This is a general framework that can be applied to any complex problem<br><br>
           
           I'll be showing concrete examples of how we applied this to real coding challenges
@@ -320,8 +328,8 @@
       </section>
 
       <section data-background-class="visualize">
-        <section data-background-class="visualize">
-          <h2>Step 1 - Visualize the End Goal</h2>
+      <section data-background-class="visualize">
+        <h2>Step 1 - Visualize the End Goal</h2>
           
           <div class="grid fragment">
             <div class="fragment">
@@ -331,17 +339,17 @@
             <div class="fragment">
               <ul>
                 <li class="fragment highlight-current-blue">What problem are we really solving?</li>
-                <li class="fragment highlight-current-blue">What does success actually look like?</li>
-                <li class="fragment highlight-current-blue">Who benefits and how?</li>
-              </ul>
+              <li class="fragment highlight-current-blue">What does success actually look like?</li>
+              <li class="fragment highlight-current-blue">Who benefits and how?</li>
+            </ul>
             
-            </div>
           </div>
-          
-          <blockquote class="fragment">
-            "If you don't know where you're going, any road will get you there."
-          </blockquote>
-
+        </div>
+        
+        <blockquote class="fragment">
+          "If you don't know where you're going, any road will get you there."
+        </blockquote>
+        
           <aside class="notes">
             [Rhetorical question to audience] "How many of you have tried to build IKEA furniture without looking at the final picture? How did that work out?"<br><br>
             
@@ -353,21 +361,21 @@
             - Creating technical debt through rushed implementations<br><br>
             
             Good questions to ask at this stage:<br>
-            - What would a perfect solution look like if we had unlimited resources?<br>
-            - How will we know when we've succeeded?<br>
-            - Who are all the stakeholders and what do they need?<br><br>
+            - What problem are we really solving?<br>
+            - What does success actually look like?<br>
+            - Who benefits and how?<br><br>
             
             This stage might feel like "wasting time" but it actually saves time overall
           </aside>
-        </section>
-  
-        <!-- Real Example - Visualizing -->
-        <section data-background-class="visualize">
-          <h2>Real Example - Visualizing the Goal</h2>
+      </section>
+
+      <!-- Real Example - Visualizing -->
+      <section data-background-class="visualize">
+        <h2>Real Example - Visualizing the Goal</h2>
           <h3>Warehouse Dispatch System at Aussie Broadband</h3>
-          
-          <div class="grid">
-            <div>
+        
+        <div class="grid">
+          <div>
               <h3>Developer Experience Hell:</h3>
               <ul>
                 <li class="fragment">Hardcoded products requiring full deployment cycles</li>
@@ -375,9 +383,9 @@
                 <li class="fragment">1+ hour CI pipeline for any change</li>
                 <li class="fragment">Session-based spaghetti code with extreme cognitive load</li>
                 <li class="fragment">Key personnel risk - "you touch it, you own it"</li>
-              </ul>
-            </div>
-            <div>
+            </ul>
+          </div>
+          <div>
               <h3>Business Impact:</h3>
               <ul>
                 <li class="fragment">New products needed developer involvement</li>
@@ -385,10 +393,10 @@
                 <li class="fragment">Ineffective order prioritization</li>
                 <li class="fragment">Hardware-locked dispatch kiosks</li>
                 <li class="fragment">Complex location expansion process</li>
-              </ul>
-            </div>
+            </ul>
           </div>
-          
+        </div>
+        
           <div class="joke">It was like playing Jenga with a production system</div>
           
           <aside class="notes">
@@ -530,10 +538,10 @@
           <img src="images/gps-recalculating.jpg" alt="GPS recalculating route meme" class="meme-image fragment" />
         
           <ul class="fragment">
-            <li class="fragment highlight-current-red">Identify critical requirements</li>
-            <li class="fragment highlight-current-red">Map dependencies</li>
-            <li class="fragment highlight-current-red">Find the shortest path from end to start</li>
-          </ul>
+          <li class="fragment highlight-current-red">Identify critical requirements</li>
+          <li class="fragment highlight-current-red">Map dependencies</li>
+          <li class="fragment highlight-current-red">Find the shortest path from end to start</li>
+        </ul>
         </div>
         
         <blockquote class="fragment">
@@ -541,28 +549,28 @@
         </blockquote>
         
         <div class="joke">GPS manufacturers missed their chance with the "figure out where you're going first" button</div>
-        <aside class="notes" data-markdown>
-          GPS meme connection: Just like a GPS needs both destination AND current location, problem-solving requires working backwards.
+        <aside class="notes">
+          GPS meme connection: Just like a GPS needs both destination AND current location, problem-solving requires working backwards.<br>
           
-          Why working backwards works:
-          * Reveals dependencies you'd miss when planning forward
-          * Prevents getting stuck in implementation details too early
-          * Creates a clearer roadmap by focusing on outcomes first
+          Why working backwards works:<br>
+          * Reveals dependencies you'd miss when planning forward<br>
+          * Prevents getting stuck in implementation details too early<br>
+          * Creates a clearer roadmap by focusing on outcomes first<br>
           
-          Identify critical requirements:
-          * What must absolutely be true for your solution to work?
-          * What are the non-negotiable requirements?
-          * Example: "Users must be able to prioritize urgent orders"
+          Identify critical requirements:<br>
+          * What must absolutely be true for your solution to work?<br>
+          * What are the non-negotiable requirements?<br>
+          * Example: "Users must be able to prioritize urgent orders"<br>
           
-          Map dependencies:
-          * What systems will your solution need to interact with?
-          * What data flows are necessary between components?
-          * Example: "We'll need shipping carrier APIs for labels"
+          Map dependencies:<br>
+          * What systems will your solution need to interact with?<br>
+          * What data flows are necessary between components?<br>
+          * Example: "We'll need shipping carrier APIs for labels"<br>
           
-          Find the shortest path:
-          * What's the minimum viable solution?
-          * Which approach gives maximum impact with minimal change?
-          * Example: "We could abstract carrier logic without changing UI first"
+          Find the shortest path:<br>
+          * What's the minimum viable solution?<br>
+          * Which approach gives maximum impact with minimal change?<br>
+          * Example: "We could abstract carrier logic without changing UI first"<br>
           
           Working backwards feels unnatural at first, but it's like planning a road trip by starting with your destination and working back to your driveway.
           </aside>
@@ -594,42 +602,39 @@
           </div>
         </div>
         
-        <p class="fragment">Key insight: We needed a <strong>strategy pattern</strong> for shipping carriers</p>
-        <p class="fragment">Created <code>ShippingCarrierManager</code> to abstract AusPost vs StarTrack implementations</p>
-        
         <blockquote>
           "By starting with the end-to-end dispatch process and working backwards, we identified the key integration points we needed to solve first."
         </blockquote>
-      </section>    
+      </section>
 
       <!-- Step 3 - Break It Down -->
       <section> 
-        <section data-background-class="break-down">
-          <h2>Step 3 - Break It Down</h2>
-          <p>Create achievable components</p>
-          
-          <div class="grid">
-            <div>
-              <ul>
-                <li class="fragment highlight-current-blue">Divide by function</li>
-                <li class="fragment highlight-current-blue">Create logical groupings</li>
-                <li class="fragment highlight-current-blue">Keep components manageable (1-2 day tasks)</li>
-              </ul>
-              
-              <blockquote class="fragment">
-                "The best way to eat an elephant is one bite at a time."
-              </blockquote>
-            </div>
-            <div>
+      <section data-background-class="break-down">
+        <h2>Step 3 - Break It Down</h2>
+        <p>Create achievable components</p>
+        
+        <div class="grid">
+          <div>
+            <ul>
+              <li class="fragment highlight-current-blue">Divide by function</li>
+              <li class="fragment highlight-current-blue">Create logical groupings</li>
+              <li class="fragment highlight-current-blue">Keep components manageable (1-2 day tasks)</li>
+            </ul>
+            
+            <blockquote class="fragment">
+              "The best way to eat an elephant is one bite at a time."
+            </blockquote>
+          </div>
+          <div>
               <img src="images/breaking-it-down.jpg" alt="Breaking it down visualisation meme" class="meme-image" />
             </div>
-          </div>
-          
-          <div class="joke">This is basically how I approach eating a burrito bowl too</div>
-        </section>
+        </div>
+        
+        <div class="joke">This is basically how I approach eating a burrito bowl too</div>
+      </section>
 
         <!-- Breaking Down the Dispatch System -->
-        <section data-background-class="break-down">
+      <section data-background-class="break-down">
           <h2>Breaking Down the Dispatch System</h2>
           
           <!-- Step navigation controls -->
@@ -722,9 +727,9 @@
                   <div style="background: rgba(0,200,100,0.2); border: 1px solid #00cc66; border-radius: 5px; padding: 5px; text-align: center; font-size: 0.8em;">
                     <strong>Vue.js Frontend</strong>
                     <div style="font-size: 0.9em;">UI Layer</div>
-                  </div>
-                </div>
-                
+          </div>
+        </div>
+        
                 <!-- Database -->
                 <div style="background: rgba(150,100,200,0.3); border: 1px solid #9966cc; border-radius: 5px; padding: 5px; text-align: center; font-size: 0.8em;">
                   Database (Hardware Agnostic Configuration)
@@ -737,8 +742,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          
+        </div>
+        
           <aside class="notes">
             Key components we identified:<br>
             - Core job management: Handling creation, validation, and lifecycle<br>
@@ -759,8 +764,8 @@
             - Add new warehouses via simple DB updates
           </aside>
         </section>
-      </section>  
-      
+      </section>
+
       <!-- Putting It All Together -->
       <section data-background-class="putting-together">
         <h2>Putting It All Together</h2>
@@ -822,8 +827,8 @@
             <div>
               <ul>
                 <li>Modular services that could be independently tested</li>
-                <li>Clear interfaces between components</li>
-              </ul>
+            <li>Clear interfaces between components</li>
+          </ul>
             </div>
           </div>
         </div>
